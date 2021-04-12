@@ -1,6 +1,6 @@
 //listNames.pop or push??
 
-let listNames = [] 
+
 /*
 newList.onshow=function(){
     drpLists.clear()   
