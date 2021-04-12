@@ -1,6 +1,5 @@
 //listNames.pop or push??
-
-let listNames = [] 
+//allie
 /*
 newList.onshow=function(){
     drpLists.clear()   
@@ -9,6 +8,7 @@ newList.onshow=function(){
 }
 
 */
+//when they submit it will go to the end of the listNames array (maybe will change location later..) and then  label will show the addition.
 
 btnSubmit.onclick=function(){
   listNames.push(inptAddItem.value)

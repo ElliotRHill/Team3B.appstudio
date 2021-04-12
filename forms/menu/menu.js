@@ -1,8 +1,8 @@
-
+//allie
 hmbMenu.onshow=function(x){
   hmbMenu.hidden = false
 }
-
+//menu to change to different forms when they click on hmb menu. could be copied and pasted to every page
 hmbMenu.onclick=function(s){ 
     if (typeof(s) == "object") {
        return
@@ -28,7 +28,7 @@ hmbMenu.onclick=function(s){
 }
 
 
-
+//buttons to switch forms on the menu page
 btnYourLists.onclick=function(){
   ChangeForm(yourLists)
 }
