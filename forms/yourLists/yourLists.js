@@ -14,3 +14,7 @@ btnDeleteList.onclick=function(){
     for (i = 0; i < listNames.length; i++)
         rdoLists.addItem(listNames[i])
 }
+
+btnAddList.onclick=function(){
+    ChangeForm(newList)
+}
