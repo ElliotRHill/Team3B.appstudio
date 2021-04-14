@@ -1,5 +1,14 @@
+//Array with call from Postman
+grocStores = ["Walmart Neighboorhood Market", "Hy-Vee", "ALDI", "Family Dollar", "ALDI", "Family Dollar",  "Hy-Vee", "Family Dollar", "Family Dollar", "Trader Joe's"]
+
+//Declared arrays for markers
+returnedLoc = [[41.2626004, -95.9811922, "Walmart Neighborhood Market"], [41.261463, -95.879364, "Hy-Vee"], [41.3024318, -95.9559953, "ALDI"], [41.2512087, -95.94750669999999, "Family Dollar"]]
+markers = []
+point= []
+
+//API call
 // 1. *** use your own url copied from Postman ****
-let requestURL = "https://maps.googleapis.com/maps/api/place/textsearch/json?query=grocery store&key=AIzaSyDoaVtASvuYckCYDer224otaiYRZApFXiw&location=41.265331,-95.949364&radius=2000&type=supermarket &maxprice=10"
+let requestURL = "https://maps.googleapis.com/maps/api/place/textsearch/json?query=grocery store &key=AIzaSyDoaVtASvuYckCYDer224otaiYRZApFXiw&location=41.265331,-95.949364&radius=2000&type=grocery_or_supermarket &maxprice=10"
 
 function onXHRLoad() {
     let message = ""
@@ -14,6 +23,8 @@ function onXHRLoad() {
     
     // 2. *** put your textarea control name here ****
     txtaLocation.value = message
+
+
     
     // if want to add to database call a function here that does that
     // addToDatabase()
@@ -61,3 +72,134 @@ btnLocation.onclick=function(){
    // call the code that will make the API call, then process what comes back
     callAPI(requestURL)
 }
+
+
+/*
+This gets your current location and marks it, then also marks the other 4 
+locations coded below. You could hard-code these like they are or 
+use a variable. 
+* remember, you may have to zoom out the map to see all of the markers. 
+
+Before this will work, you need a Google Cloud API key that is enabled
+for use with Google Maps and Google Places API's, and that is associated 
+with a Billing account (in case you are a hacker). 
+  
+So do this: 
+Get a Google Maps api key and then enable it for Google Maps APIs and 
+for Google Places APIs (most common ones). To enable the key with these two, 
+go to your Google Maps Console (search “google api 
+key dashboard console”). Then click left menu 
+‘Credentials’. Pick your API key, and click 'Library' in left side menu. On next 
+page click the ‘Maps Javascript API’ one. On next 
+page click ‘Enable’. Repeat for 'Places API'. 
+
+Next you have to go to billing and give Google your 
+credit card for this API. You can cancel this when course is done 
+(if you get charged at all, it will only be pennies). 
+
+Now put your API key in the apikey property. 
+*/
+
+var marker
+var infowindow
+var currentLat, currentLong
+
+function gotLocation(location, lat, long) {
+
+    gmLocations.mapOptions.latitude = location.coords.latitude
+    gmLocations.mapOptions.longitude = location.coords.longitude
+    
+    currentLat22 =location.coords.latitude
+    currentLong22 = location.coords.longitude
+    console.log(`lat and long are ${currentLat22} and ${currentLong22}`)
+    gmLocations.refresh()
+
+    //Put a marker on our location
+    point1 = new google.maps.LatLng(location.coords.latitude, location.coords.longitude)
+    marker1 = gmLocations.setMarker({
+        position: point1
+    });
+
+    //Walmart
+    point2 = new google.maps.LatLng(41.2626004, -95.9811922);
+    marker2 = gmLocations.setMarker({
+        position: point2
+    });
+
+    //Hyvee
+    point3 = new google.maps.LatLng(41.261463, -95.879364);
+    marker3 = gmLocations.setMarker({
+        position: point3
+    });
+
+    //Family Dollar
+    //loop 
+    point4 = new google.maps.LatLng(41.2512087, -95.94750669999999);
+    marker4 = gmLocations.setMarker({
+        position: point4, 
+        title: "Family Dollar"
+    });
+
+    //Aldi
+    point5 = new google.maps.LatLng(41.3024318, -95.9559953);
+    marker5 = gmLocations.setMarker({
+        position: point5
+    });
+
+
+};
+
+
+btnCL4.onclick = function() {
+    // have to run this before you do anything else - call this getLocation button
+    navigator.geolocation.getCurrentPosition(gotLocation)
+    NSB.WaitCursor(true)
+}
+
+
+
+
+ /*
+btnDone.onclick=function(){
+  // returns array of the choices' text
+  
+  let message = "Your favorite sandwiches are: " 
+  for (i = 0; i < selSandwiches.text.length; i++)
+     message = message + selSandwiches.text[i] + ", "
+     
+  // remove the last comma
+  // slice drops last 2 characters (comma and space)
+  //     starts at 0, and goes to end of the 
+  //     string minus 2 characters
+  message = message.slice(0, -2)
+  console.log(message)
+}
+*/
+//Add to select
+googleAPI.onshow=function(){
+  selLoc.clear()   
+    // put array of flavors in the dropdown (called populating it)
+    for (i = 0; i < grocStores.length; i++) 
+        selLoc.addItem(grocStores[i])
+}
+
+
+// multiple list choices allowed; uses button onclick
+// Comment code above, and uncomment code below
+
+btnFavLoc.onclick=function(){
+  // returns array of the choices' text
+    let message = "You chose:"
+  for (i = 0; i < selLoc.text.length; i++)
+     message = message + " " + selLoc.text[i] + ", " 
+     
+  // remove the last comma
+  // slice drops last 2 characters (comma and space)
+  //     starts at 0, and goes to end of the 
+  //     string minus 2 characters
+  message = message.slice(0, -2)
+  txtaLocation.value = message
+  
+}
+
+//Alert

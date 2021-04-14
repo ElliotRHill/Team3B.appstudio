@@ -27,6 +27,42 @@
         "Elements",
         "btnLocation.json"
       ]
+    },
+    {
+      "!type": "External",
+      "file": [
+        "forms",
+        "googleAPI",
+        "Elements",
+        "gmLocations.json"
+      ]
+    },
+    {
+      "!type": "External",
+      "file": [
+        "forms",
+        "googleAPI",
+        "Elements",
+        "btnCL4.json"
+      ]
+    },
+    {
+      "!type": "External",
+      "file": [
+        "forms",
+        "googleAPI",
+        "Elements",
+        "btnFavLoc.json"
+      ]
+    },
+    {
+      "!type": "External",
+      "file": [
+        "forms",
+        "googleAPI",
+        "Elements",
+        "selLoc.json"
+      ]
     }
   ],
   "class": "",
