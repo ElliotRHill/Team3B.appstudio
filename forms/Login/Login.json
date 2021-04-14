@@ -27,6 +27,24 @@
         "Elements",
         "inptPassword.json"
       ]
+    },
+    {
+      "!type": "External",
+      "file": [
+        "forms",
+        "Login",
+        "Elements",
+        "btnLogin.json"
+      ]
+    },
+    {
+      "!type": "External",
+      "file": [
+        "forms",
+        "Login",
+        "Elements",
+        "btnAccount.json"
+      ]
     }
   ],
   "class": "",
