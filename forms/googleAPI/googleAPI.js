@@ -4,7 +4,7 @@ grocStores = ["Walmart Neighboorhood Market", "Hy-Vee", "ALDI", "Family Dollar",
 //Declared arrays for markers
 returnedLoc = [[41.2626004, -95.9811922, "Walmart Neighborhood Market"], [41.261463, -95.879364, "Hy-Vee"], [41.3024318, -95.9559953, "ALDI"], [41.2512087, -95.94750669999999, "Family Dollar"]]
 markers = []
-point= []
+points= []
 
 //API call
 // 1. *** use your own url copied from Postman ****
@@ -17,8 +17,8 @@ function onXHRLoad() {
     let apiData = JSON.parse(this.responseText)
     
     for (i = 0; i <= apiData.results.length - 1; i++) {
-        console.log(`${apiData.results[i].name}`)
-        message = message + apiData.results[i].name + "\n"
+        console.log(`${apiData.results[i].formatted_address}`)
+        message = message + apiData.results[i].formatted_address + "\n" + apiData.results[i].name + "\n" + "\n" 
     }
     
     // 2. *** put your textarea control name here ****
@@ -202,4 +202,4 @@ btnFavLoc.onclick=function(){
   
 }
 
-//Alert
+
