@@ -1,10 +1,10 @@
 //Array with call from Postman
-grocStores = ["Walmart Neighboorhood Market", "Hy-Vee", "ALDI", "Family Dollar", "ALDI", "Family Dollar",  "Hy-Vee", "Family Dollar", "Family Dollar", "Trader Joe's"]
+grocStores = ["Walmart Neighboorhood Market", "Hy-Vee", "ALDI", "Family Dollar", "ALDI", "Family Dollar",  "Hy-Vee", "Family Dollar", "Trader Joe's"]
 
 //Declared arrays for markers
-returnedLoc = [[41.2626004, -95.9811922, "Walmart Neighborhood Market"], [41.261463, -95.879364, "Hy-Vee"], [41.3024318, -95.9559953, "ALDI"], [41.2512087, -95.94750669999999, "Family Dollar"]]
-markers = []
-points= []
+returnedLoc = [[41.2626004, -95.9811922, "Walmart Neighborhood Market"], [41.261463, -95.879364, "Hy-Vee"], [41.3024318, -95.9559953, "ALDI"], [41.2512087, -95.94750669999999, "Family Dollar"], [41.2520613, -96.0222567, "ALDI"], [41.21445370000001, -95.95798689999999, "Family Dollar"], [41.2831746, -95.9370907, "Family Dollar"], [41.265507, -96.03931999999999, "Hy-Vee"][41.2482854, -96.0739732, "Trader Joe's"]]
+marker = ["marker2", "marker3", "marker4", "marker5", "marker6", "marker7", "marker8", "marker9"]
+point = ["point2", "point3", "point4", "point5", "point6", "point7", "point8", "point9"]
 
 //API call
 // 1. *** use your own url copied from Postman ****
@@ -124,28 +124,60 @@ function gotLocation(location, lat, long) {
     point2 = new google.maps.LatLng(41.2626004, -95.9811922);
     marker2 = gmLocations.setMarker({
         position: point2
+      
     });
 
     //Hyvee
     point3 = new google.maps.LatLng(41.261463, -95.879364);
     marker3 = gmLocations.setMarker({
         position: point3
+     
     });
 
     //Family Dollar
-    //loop 
+    //loop possibility
     point4 = new google.maps.LatLng(41.2512087, -95.94750669999999);
     marker4 = gmLocations.setMarker({
         position: point4, 
-        title: "Family Dollar"
+    
     });
-
-    //Aldi
+     //Aldi
     point5 = new google.maps.LatLng(41.3024318, -95.9559953);
     marker5 = gmLocations.setMarker({
         position: point5
-    });
-
+        
+        });
+        
+         //ALDI
+    point6 = new google.maps.LatLng(41.2520613, -96.0222567);
+    marker6 = gmLocations.setMarker({
+        position: point6
+   
+        });
+          //"Family Dollar"
+    point7 = new google.maps.LatLng(41.21445370000001, -95.95798689999999);
+    marker7 = gmLocations.setMarker({
+        position: point7
+    
+        });
+          //"Family Dollar"
+    point8 = new google.maps.LatLng(41.2831746, -95.9370907);
+    marker8 = gmLocations.setMarker({
+        position: point8
+    
+        });
+          //, "Hy-Vee"
+    point9 = new google.maps.LatLng(41.265507, -96.03931999999999);
+    marker9 = gmLocations.setMarker({
+        position: point9
+     
+        });
+          //, "Trader Joe's
+    point10 = new google.maps.LatLng(41.2482854, -96.0739732);
+    marker10 = gmLocations.setMarker({
+        position: point10
+       
+      });
 
 };
 
@@ -159,22 +191,6 @@ btnCL4.onclick = function() {
 
 
 
- /*
-btnDone.onclick=function(){
-  // returns array of the choices' text
-  
-  let message = "Your favorite sandwiches are: " 
-  for (i = 0; i < selSandwiches.text.length; i++)
-     message = message + selSandwiches.text[i] + ", "
-     
-  // remove the last comma
-  // slice drops last 2 characters (comma and space)
-  //     starts at 0, and goes to end of the 
-  //     string minus 2 characters
-  message = message.slice(0, -2)
-  console.log(message)
-}
-*/
 //Add to select
 googleAPI.onshow=function(){
   selLoc.clear()   
