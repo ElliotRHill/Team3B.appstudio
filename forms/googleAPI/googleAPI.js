@@ -74,119 +74,6 @@ btnLocation.onclick=function(){
 }
 
 
-/*
-This gets your current location and marks it, then also marks the other 4 
-locations coded below. You could hard-code these like they are or 
-use a variable. 
-* remember, you may have to zoom out the map to see all of the markers. 
-
-Before this will work, you need a Google Cloud API key that is enabled
-for use with Google Maps and Google Places API's, and that is associated 
-with a Billing account (in case you are a hacker). 
-  
-So do this: 
-Get a Google Maps api key and then enable it for Google Maps APIs and 
-for Google Places APIs (most common ones). To enable the key with these two, 
-go to your Google Maps Console (search “google api 
-key dashboard console”). Then click left menu 
-‘Credentials’. Pick your API key, and click 'Library' in left side menu. On next 
-page click the ‘Maps Javascript API’ one. On next 
-page click ‘Enable’. Repeat for 'Places API'. 
-
-Next you have to go to billing and give Google your 
-credit card for this API. You can cancel this when course is done 
-(if you get charged at all, it will only be pennies). 
-
-Now put your API key in the apikey property. 
-*/
-
-var marker
-var infowindow
-var currentLat, currentLong
-
-function gotLocation(location, lat, long) {
-
-    gmLocations.mapOptions.latitude = location.coords.latitude
-    gmLocations.mapOptions.longitude = location.coords.longitude
-    
-    currentLat22 =location.coords.latitude
-    currentLong22 = location.coords.longitude
-    console.log(`lat and long are ${currentLat22} and ${currentLong22}`)
-    gmLocations.refresh()
-
-    //Put a marker on our location
-    point1 = new google.maps.LatLng(location.coords.latitude, location.coords.longitude)
-    marker1 = gmLocations.setMarker({
-        position: point1
-    });
-
-    //Walmart
-    point2 = new google.maps.LatLng(41.2626004, -95.9811922);
-    marker2 = gmLocations.setMarker({
-        position: point2
-      
-    });
-
-    //Hyvee
-    point3 = new google.maps.LatLng(41.261463, -95.879364);
-    marker3 = gmLocations.setMarker({
-        position: point3
-     
-    });
-
-    //Family Dollar
-    //loop possibility
-    point4 = new google.maps.LatLng(41.2512087, -95.94750669999999);
-    marker4 = gmLocations.setMarker({
-        position: point4, 
-    
-    });
-     //Aldi
-    point5 = new google.maps.LatLng(41.3024318, -95.9559953);
-    marker5 = gmLocations.setMarker({
-        position: point5
-        
-        });
-        
-         //ALDI
-    point6 = new google.maps.LatLng(41.2520613, -96.0222567);
-    marker6 = gmLocations.setMarker({
-        position: point6
-   
-        });
-          //"Family Dollar"
-    point7 = new google.maps.LatLng(41.21445370000001, -95.95798689999999);
-    marker7 = gmLocations.setMarker({
-        position: point7
-    
-        });
-          //"Family Dollar"
-    point8 = new google.maps.LatLng(41.2831746, -95.9370907);
-    marker8 = gmLocations.setMarker({
-        position: point8
-    
-        });
-          //, "Hy-Vee"
-    point9 = new google.maps.LatLng(41.265507, -96.03931999999999);
-    marker9 = gmLocations.setMarker({
-        position: point9
-     
-        });
-          //, "Trader Joe's
-    point10 = new google.maps.LatLng(41.2482854, -96.0739732);
-    marker10 = gmLocations.setMarker({
-        position: point10
-       
-      });
-
-};
-
-
-btnCL4.onclick = function() {
-    // have to run this before you do anything else - call this getLocation button
-    navigator.geolocation.getCurrentPosition(gotLocation)
-    NSB.WaitCursor(true)
-}
 
 
 
@@ -215,7 +102,122 @@ btnFavLoc.onclick=function(){
   //     string minus 2 characters
   message = message.slice(0, -2)
   txtaLocation.value = message
-  
+
+
+
 }
 
+////////////////////////////////////////////Need to add markers into select//////////////////////////////////
+
+myPlaces = [
+              {name: "Walmart Neighborhood Market",lat:41.2626004,lon:-95.9811922},
+              {name: "Hy-Vee",lat:41.261463,lon:-95.879364},
+              {name: "ALDI",lat:41.3024318,lon:-95.9559953},
+              {name: "Family Dollar",lat:41.2512087,lon:-95.94750669999999},
+              {name: "ALDI",lat:41.2520613,lon:-96.0222567},
+              {name: "Family Dollar",lat:41.21445370000001,lon:-95.95798689999999},
+              {name: "Family Dollar",lat:41.2831746,lon:-95.9370907},
+              {name: "Hy-Vee",lat:41.265507,lon:-96.03931999999999},
+              {name: "Trader Joe's",lat:41.2482854,lon:-96.0739732}
+            ]
+
+var marker
+var infowindow
+var currentLat, currentLong
+
+function gotLocation(location, lat, long) {
+
+    gmLocations.mapOptions.latitude = location.coords.latitude
+    gmLocations.mapOptions.longitude = location.coords.longitude
+    
+    currentLat22 =location.coords.latitude
+    currentLong22 = location.coords.longitude
+    console.log(`lat and long are ${currentLat22} and ${currentLong22}`)
+    gmLocations.refresh()
+
+    //Put a marker on our location
+    point1 = new google.maps.LatLng(location.coords.latitude, location.coords.longitude)
+    marker1 = gmLocations.setMarker({
+        position: point1,
+        title: "My Location"    // hover by balloon tip tooltip name
+    })
+   //Walmart
+    point2 = new google.maps.LatLng(41.2626004, -95.9811922);
+    marker2 = gmLocations.setMarker({
+        position: point2,
+        title: "Walmart Neighboorhood Market"
+    });
+
+    //Hyvee
+    point3 = new google.maps.LatLng(41.261463, -95.879364);
+    marker3 = gmLocations.setMarker({
+        position: point3,
+        title: "Hy-Vee"
+    });
+
+    //Family Dollar
+    //loop possibility
+    point4 = new google.maps.LatLng(41.2512087, -95.94750669999999);
+    marker4 = gmLocations.setMarker({
+        position: point4, 
+        title: "Family Dollar"
+    });
+     //Aldi
+    point5 = new google.maps.LatLng(41.3024318, -95.9559953);
+    marker5 = gmLocations.setMarker({
+        position: point5,
+        title: "Aldi" 
+        });
+        
+         //ALDI
+    point6 = new google.maps.LatLng(41.2520613, -96.0222567);
+    marker6 = gmLocations.setMarker({
+        position: point6,
+        title: "Aldi"
+        });
+          //"Family Dollar"
+    point7 = new google.maps.LatLng(41.21445370000001, -95.95798689999999);
+    marker7 = gmLocations.setMarker({
+        position: point7,
+        title: "Family Dollar"
+        });
+          //"Family Dollar"
+    point8 = new google.maps.LatLng(41.2831746, -95.9370907);
+    marker8 = gmLocations.setMarker({
+        position: point8,
+        title: "Family Dollar"
+        });
+          //, "Hy-Vee"
+    point9 = new google.maps.LatLng(41.265507, -96.03931999999999);
+    marker9 = gmLocations.setMarker({
+        position: point9,
+        title: "Hy-Vee"
+        });
+          //, "Trader Joe's
+    point10 = new google.maps.LatLng(41.2482854, -96.0739732);
+    marker10 = gmLocations.setMarker({
+        position: point10,
+        title: "Trader Joe's"
+      });
+
+
+
+
+    
+    let tempPoint = ""
+    let tempMarker = ""
+    for (i = 0; i < myPlaces.length;i++) {
+      tempPoint = new google.maps.LatLng(myPlaces[i].lat,myPlaces[i].lon)
+      tempMarker = gmLocations.setMarker({
+        position: tempPoint
+      })
+    }
+}
+
+
+btnCL4.onclick = function() {
+    // have to run this before you do anything else - call this getLocation button
+    navigator.geolocation.getCurrentPosition(gotLocation)
+    NSB.WaitCursor(true)
+}
 
