@@ -3,8 +3,7 @@ grocStores = ["Walmart Neighboorhood Market", "Hy-Vee", "ALDI", "Family Dollar",
 
 //Declared arrays for markers
 returnedLoc = [[41.2626004, -95.9811922, "Walmart Neighborhood Market"], [41.261463, -95.879364, "Hy-Vee"], [41.3024318, -95.9559953, "ALDI"], [41.2512087, -95.94750669999999, "Family Dollar"], [41.2520613, -96.0222567, "ALDI"], [41.21445370000001, -95.95798689999999, "Family Dollar"], [41.2831746, -95.9370907, "Family Dollar"], [41.265507, -96.03931999999999, "Hy-Vee"][41.2482854, -96.0739732, "Trader Joe's"]]
-marker = ["marker2", "marker3", "marker4", "marker5", "marker6", "marker7", "marker8", "marker9"]
-point = ["point2", "point3", "point4", "point5", "point6", "point7", "point8", "point9"]
+
 
 //API call
 // 1. *** use your own url copied from Postman ****
