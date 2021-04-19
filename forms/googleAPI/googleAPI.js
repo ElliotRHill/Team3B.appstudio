@@ -2,8 +2,8 @@
 grocStores = ["Walmart Neighboorhood Market", "Hy-Vee", "ALDI", "Family Dollar", "ALDI", "Family Dollar",  "Hy-Vee", "Family Dollar", "Trader Joe's"]
 
 //Declared arrays for markers
-returnedLoc = [[41.2626004, -95.9811922, "Walmart Neighborhood Market"], [41.261463, -95.879364, "Hy-Vee"], [41.3024318, -95.9559953, "ALDI"], [41.2512087, -95.94750669999999, "Family Dollar"], [41.2520613, -96.0222567, "ALDI"], [41.21445370000001, -95.95798689999999, "Family Dollar"], [41.2831746, -95.9370907, "Family Dollar"], [41.265507, -96.03931999999999, "Hy-Vee"][41.2482854, -96.0739732, "Trader Joe's"]]
-
+lat = [41.2626004, 41.261463, 41.3024318, 41.2512087, 41.2520613, 41.21445370000001, 41.2831746, 41.265507, 41.2482854]
+lon = [-95.9811922, -95.879364, -95.9559953, -95.94750669999999, -96.0222567, -95.95798689999999, -95.9370907, -96.03931999999999, -96.0739732]
 
 //API call
 // 1. *** use your own url copied from Postman ****
@@ -220,3 +220,7 @@ btnCL4.onclick = function() {
     NSB.WaitCursor(true)
 }
 
+
+btnBackMenu.onclick=function(){
+  ChangeForm(menu)
+}
