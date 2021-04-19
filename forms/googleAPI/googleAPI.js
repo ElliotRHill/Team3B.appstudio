@@ -140,6 +140,8 @@ function gotLocation(location, lat, long) {
         position: point1,
         title: "My Location"    // hover by balloon tip tooltip name
     })
+    //All hard-coded below, but the loop takes care of it
+    /*
    //Walmart
     point2 = new google.maps.LatLng(41.2626004, -95.9811922);
     marker2 = gmLocations.setMarker({
@@ -198,9 +200,9 @@ function gotLocation(location, lat, long) {
         position: point10,
         title: "Trader Joe's"
       });
+*/
 
-
-
+//loop of myPlaces to put markers on
 
     
     let tempPoint = ""
@@ -208,7 +210,8 @@ function gotLocation(location, lat, long) {
     for (i = 0; i < myPlaces.length;i++) {
       tempPoint = new google.maps.LatLng(myPlaces[i].lat,myPlaces[i].lon)
       tempMarker = gmLocations.setMarker({
-        position: tempPoint
+        position: tempPoint,
+        title: grocStores[i]
       })
     }
 }
