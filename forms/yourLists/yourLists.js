@@ -53,5 +53,28 @@ btnDeleteList.onclick=function(){
 }
 
 btnAddList.onclick=function(){
+    let newListName = inptNewListName.value
+    let listUserID = Math.floor(Math.random() * 101)
+    query = "INSERT INTO lists (`list_name`,`user_id`) VALUES ('" + newListName + "', '" + listUserID + "')"
+    req = Ajax("https://ormond.creighton.edu/courses/375/ajax-connection.php", "POST", "host=ormond.creighton.edu&user=" + netID + "&pass=" + pw + "&database=" + schema + "&query=" + query)
+    if (req.status == 200) { 
+        if (req.responseText == 500)    
+            console.log("You have successfully added the customer!")
+        else
+            console.log("There was a problem with adding the customer to the database.")
+    } else 
+        console.log(`Error: ${req.status}`)
+    
     ChangeForm(newList)
 }
+
+
+
+
+
+
+
+
+
+
+

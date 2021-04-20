@@ -16,7 +16,7 @@
         "forms",
         "newList",
         "Elements",
-        "Dropdown1.json"
+        "drpLists.json"
       ]
     },
     {
@@ -61,7 +61,7 @@
   "onhide": "",
   "onkeypress": "",
   "onresize": "",
-  "onshow": "",
+  "onshow": "newList.onshow()",
   "openMode": "none",
   "parentForm": "",
   "position": "absolute",

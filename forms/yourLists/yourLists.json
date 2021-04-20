@@ -36,6 +36,24 @@
         "Elements",
         "btnAddList.json"
       ]
+    },
+    {
+      "!type": "External",
+      "file": [
+        "forms",
+        "yourLists",
+        "Elements",
+        "btnSelList.json"
+      ]
+    },
+    {
+      "!type": "External",
+      "file": [
+        "forms",
+        "yourLists",
+        "Elements",
+        "inptNewListName.json"
+      ]
     }
   ],
   "class": "",

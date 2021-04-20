@@ -3,7 +3,7 @@
   "backgroundColor": "",
   "badge": "",
   "badgeAppearance": " badge-info",
-  "bottom": "auto",
+  "bottom": "360",
   "cached_js": "",
   "cached_js_script_hash": "d41d8cd98f00b204e9800998ecf8427e",
   "children": [],
@@ -19,7 +19,7 @@
   "footer": "",
   "header": "Lists",
   "headerCols": 2,
-  "height": 221,
+  "height": "250",
   "hidden": "",
   "icon": "",
   "iconTitle": "",
@@ -27,7 +27,7 @@
   "inline": "",
   "inputmode": "",
   "items": "Item #1\n>Item #2\n",
-  "left": 49,
+  "left": "15",
   "mAll": "",
   "mBottom": "",
   "mLeft": "",
@@ -64,9 +64,9 @@
   "right": "auto",
   "script": "",
   "style": "",
-  "top": 87,
+  "top": "90",
   "validation": "",
   "value": "",
   "valueCols": 10,
-  "width": 239
+  "width": "290"
 }
