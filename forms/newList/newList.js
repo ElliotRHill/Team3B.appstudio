@@ -1,6 +1,3 @@
-//listNames.pop or push??
-
-
 
 newList.onshow=function(){
     query = "SELECT list_name FROM lists"
@@ -25,21 +22,21 @@ drpLists.onclick=function(s){
     else {  
         drpLists.value = s
         
-        query = "SELECT name FROM customer WHERE `state` = '" + s + "'"
-        req = Ajax("https://ormond.creighton.edu/courses/375/ajax-connection.php", "POST", "host=ormond.creighton.edu&user=" + netID + "&pass=" + pw + "&database=" + netID + "&query=" + query)
+        query = "SELECT product_name FROM list_items LEFT JOIN lists ON list_items.listID = lists.listID LEFT JOIN products ON list_items.product_id = products.product_id WHERE list_name = '" + s + "'"
+        req = Ajax("https://ormond.creighton.edu/courses/375/ajax-connection.php", "POST", "host=ormond.creighton.edu&user=" + netID + "&pass=" + pw + "&database=" + schema + "&query=" + query)
 
         if (req.status == 200) { 
             results = JSON.parse(req.responseText)
             if (results.length == 0)
-                lblEmp.textContent = "There are no names in the database."
+                lblShowList.textContent = ""
             else {        
-                let message = ""
+                let products = ""
                 for (i = 0; i < results.length; i++)
-                    message = message + results[i][0] + "\n"
-                lblEmp.textContent = message
+                    products = products + results[i][0] + "\n"
+                lblShowList.textContent = products // change this to list group
             }
         } else
-            lblEmp.textContent = "Error code: " + req.status
+            console.log(`Error code: ${req.status}`)
     }
 }
 

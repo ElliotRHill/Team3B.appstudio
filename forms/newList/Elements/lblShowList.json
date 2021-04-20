@@ -18,10 +18,10 @@
   "fontSize": 16,
   "fontStyle": "",
   "fontWeight": "bold",
-  "height": 99,
+  "height": "250",
   "hidden": "",
   "id": "lblShowList",
-  "left": 49,
+  "left": "15",
   "mAll": "",
   "mBottom": "",
   "mLeft": "",
@@ -46,5 +46,5 @@
   "style": "",
   "text": "Label",
   "top": 165,
-  "width": 205
+  "width": "290"
 }

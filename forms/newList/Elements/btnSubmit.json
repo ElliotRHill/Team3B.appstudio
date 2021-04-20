@@ -29,7 +29,7 @@
   "icon": "",
   "iconTitle": "",
   "id": "btnSubmit",
-  "left": 36,
+  "left": "210",
   "mAll": "",
   "mBottom": "",
   "mLeft": "",
@@ -60,7 +60,7 @@
   "size": " btn-md",
   "style": "",
   "toggleControl": "",
-  "top": 391,
+  "top": "90",
   "value": "Add Item",
   "width": "auto"
 }
