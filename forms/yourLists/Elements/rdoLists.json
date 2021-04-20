@@ -26,7 +26,7 @@
   "id": "rdoLists",
   "inline": "",
   "inputmode": "",
-  "items": "Item #1\n>Item #2\n*Item #3 (disabled)",
+  "items": "Item #1\n>Item #2\n",
   "left": 49,
   "mAll": "",
   "mBottom": "",
@@ -67,6 +67,6 @@
   "top": 87,
   "validation": "",
   "value": "",
-  "valueCols": 12,
-  "width": "auto"
+  "valueCols": 10,
+  "width": 239
 }
