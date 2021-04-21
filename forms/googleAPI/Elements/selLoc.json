@@ -26,7 +26,7 @@
   "id": "selLoc",
   "inputmode": "",
   "items": "",
-  "left": 113,
+  "left": 87,
   "mAll": "",
   "mBottom": "",
   "mLeft": "",
@@ -70,5 +70,5 @@
   "value": "",
   "valueCols": 10,
   "values": "101\n102\n103\n104",
-  "width": 207
+  "width": 235
 }

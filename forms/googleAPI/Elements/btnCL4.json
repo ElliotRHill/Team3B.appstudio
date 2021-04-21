@@ -24,12 +24,12 @@
   "fontWeight": "",
   "groupStyle": "",
   "grouping": "",
-  "height": 35,
+  "height": 34,
   "hidden": "",
   "icon": "",
   "iconTitle": "",
   "id": "btnCL4",
-  "left": 4,
+  "left": 3,
   "mAll": "",
   "mBottom": "",
   "mLeft": "",
@@ -60,7 +60,7 @@
   "size": " btn-md",
   "style": "",
   "toggleControl": "",
-  "top": 260,
+  "top": 254,
   "value": "3. Map",
   "width": 79
 }

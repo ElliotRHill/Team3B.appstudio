@@ -1,5 +1,7 @@
 //Array with call from Postman
-grocStores = ["Walmart Neighboorhood Market", "Hy-Vee", "ALDI", "Family Dollar", "ALDI", "Family Dollar",  "Hy-Vee", "Family Dollar", "Trader Joe's"]
+grocStores = ["Walmart: 360 Saddle Creek Rd, Omaha, NE","Hy-Vee: 2323 W Broadway, Council Bluffs, IA","ALDI: 4801 N 30th St, Omaha, NE","Family Dollar: 834 S 24th St, Omaha, NE","ALDI: 885 S 72nd St, Omaha, NE","Family Dollar: 2601 N 16th St, Omaha, NE","Hy-Vee: 7910 Cass St, Omaha, NE","Family Dollar: 1500 N 24th St, Omaha, NE","Trader Joe's: 3552 Leavenworth St, Omaha, NE"]
+
+
 
 //Declared arrays for markers
 lat = [41.2626004, 41.261463, 41.3024318, 41.2512087, 41.2520613, 41.21445370000001, 41.2831746, 41.265507, 41.2482854]
@@ -84,7 +86,7 @@ googleAPI.onshow=function(){
     for (i = 0; i < grocStores.length; i++) 
         selLoc.addItem(grocStores[i])
 }
-
+ 
 
 // multiple list choices allowed; uses button onclick
 // Comment code above, and uncomment code below
@@ -93,7 +95,7 @@ btnFavLoc.onclick=function(){
   // returns array of the choices' text
     let message = "You chose:"
   for (i = 0; i < selLoc.text.length; i++)
-     message = message + " " + selLoc.text[i] + ", " 
+     message = message + " " + selLoc.text[i] + " \n" + "\n" 
      
   // remove the last comma
   // slice drops last 2 characters (comma and space)
