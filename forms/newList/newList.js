@@ -33,6 +33,7 @@ drpLists.onclick=function(s){
                 let products = ""
                 for (i = 0; i < results.length; i++)
                     products = products + results[i][0] + "\n"
+                    lstShowList.addItem(results[i])
                 lblShowList.textContent = products // change this to list group
             }
         } else

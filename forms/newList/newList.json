@@ -45,6 +45,15 @@
         "Elements",
         "lblShowList.json"
       ]
+    },
+    {
+      "!type": "External",
+      "file": [
+        "forms",
+        "newList",
+        "Elements",
+        "lstShowList.json"
+      ]
     }
   ],
   "class": "",
