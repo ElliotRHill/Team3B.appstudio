@@ -29,7 +29,7 @@
   "icon": "",
   "iconTitle": "",
   "id": "btnFavLoc",
-  "left": 3,
+  "left": 5,
   "mAll": "",
   "mBottom": "",
   "mLeft": "",
@@ -60,7 +60,7 @@
   "size": " btn-md",
   "style": "",
   "toggleControl": "",
-  "top": 307,
-  "value": "2. Choose",
-  "width": 102
+  "top": 302,
+  "value": "2. Pick",
+  "width": 76
 }
