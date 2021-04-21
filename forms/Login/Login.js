@@ -14,7 +14,7 @@ btnLogin.onclick=function(){
     
     let user = inptUser.value
     
-    if (req.status == 200) { //everything worked.
+      if (req.status == 200) { //everything worked.
         for (i = 0; i < resultsUser.length; i ++) {
           if (user == resultsUser[i]) {
             console.log('this user exists')
@@ -24,30 +24,39 @@ btnLogin.onclick=function(){
             checkUser = 0
             console.log(checkUser)
           }
-        }
         //ends loop to check username
-        
-        query = "SELECT password FROM account;"
-        req = Ajax("https://ormond.creighton.edu/courses/375/ajax-connection.php", "POST", "host=ormond.creighton.edu&user=" + netID + "&pass=" + pw + "&database=" + databaseSchema + "&query=" + query)
-        resultsPW = JSON.parse(req.responseText)
-        
-        
-        
-        for (i = 0; i < resultsPW.length; i ++) {
-          if (user == resultsPW[i]) {
-            console.log('this pw exists')
-            checkUser = 1
-            break
-          } else {
-            checkUser = 0
-          }
-        }
-        
-        
+      }
     } else {
         //Handle that. 
-        console.log('failure')
+        console.log('failure user')
+    }
+      
+    query = "SELECT password FROM account;"
+    req = Ajax("https://ormond.creighton.edu/courses/375/ajax-connection.php", "POST", "host=ormond.creighton.edu&user=" + netID + "&pass=" + pw + "&database=" + databaseSchema + "&query=" + query)
+    resultsPW = JSON.parse(req.responseText)
+    
+    checkPW = ''
+    
+    let pw = inptPassword.value
+    
+    if (req.status == 200) { //everything worked.
+      for (i = 0; i < resultsPW.length; i ++) {
+        if (pw == resultsPW[i]) {
+          console.log('this pw exists')
+          checkPW = 1
+          break
+        } else {
+          checkPW = 0
+          console.log(checkPW)
+        }
+        //ends loop to check password
+      }        
+    } else {
+      //Handle that. 
+      console.log('failure user')
+    }
+      
+    if (checkUser && checkPW == 1) {
+      console.log('user and pw are in db')
     }
 }
-
-//This is the login page
