@@ -58,7 +58,10 @@ btnLogin.onclick=function(){
       console.log('failure user')
     }
       
-    if (checkUser && checkPW == 1) {
+    if ((checkUser && checkPW == 1) && (userIndex == passwordIndex)) {
       console.log('user and pw are in db')
+      ChangeForm(menu)
+    } else {
+      console.log('the user and pw do not match')
     }
 }
