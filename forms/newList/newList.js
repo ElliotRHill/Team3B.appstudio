@@ -29,12 +29,10 @@ drpLists.onclick=function(s){
             results = JSON.parse(req.responseText)
             if (results.length == 0)
                 lblShowList.textContent = ""
-            else {        
-                let products = ""
+            else { 
+                selShowList.clear()
                 for (i = 0; i < results.length; i++)
-                    products = products + results[i][0] + "\n"
-                    lstShowList.addItem(results[i])
-                lblShowList.textContent = products // change this to list group
+                    selShowList.addItem(results[i])
             }
         } else
             console.log(`Error code: ${req.status}`)
