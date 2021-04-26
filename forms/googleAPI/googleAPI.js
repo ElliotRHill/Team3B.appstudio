@@ -95,7 +95,7 @@ btnFavLoc.onclick=function(){
   // returns array of the choices' text
     let message = "You chose:"
   for (i = 0; i < selLoc.text.length; i++)
-     message = message + " " + selLoc.text[i] + " \n" + "\n" 
+     message = message + "\n" + selLoc.text[i] + " \n" + "\n" 
      
   // remove the last comma
   // slice drops last 2 characters (comma and space)
