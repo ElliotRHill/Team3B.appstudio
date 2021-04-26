@@ -67,7 +67,7 @@
   "pLeft": "",
   "pRight": "",
   "pTop": "",
-  "passwordToggle": "",
+  "passwordToggle": "true",
   "placeholder": "Enter Password",
   "popBody": "Body",
   "popClose": "hover",

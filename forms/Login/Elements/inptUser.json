@@ -32,7 +32,7 @@
   "id": "inptUser",
   "inputType": "text",
   "inputmode": "",
-  "left": "124",
+  "left": 69,
   "leftText": "Username",
   "mAll": "",
   "mBottom": "",
@@ -87,5 +87,5 @@
   "validation": "",
   "value": "",
   "valueCols": 10,
-  "width": "250"
+  "width": 303
 }
