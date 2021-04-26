@@ -69,12 +69,26 @@ btnAddList.onclick=function(){
 }
 
 
-
-
-
-
-
-
-
-
-
+hbgrPageNav.onclick=function(){
+    if (typeof(s) == "object") {
+       return
+    } else {
+       switch(s) {
+        case "Your lists":
+            ChangeForm(yourLists)
+            break;
+        case "Create new list":
+            ChangeForm(newList)
+            break;
+        case "Find Store":
+            ChangeForm(findStore)
+            break;
+        case "Weather":
+            ChangeForm(weather)
+            break;
+        case "Coupons":
+            ChangeForm(coupons)
+            break;
+        }
+    }  
+}

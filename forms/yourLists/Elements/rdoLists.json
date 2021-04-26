@@ -18,7 +18,7 @@
   "fontWeight": "",
   "footer": "",
   "header": "Lists",
-  "headerCols": 2,
+  "headerCols": 1,
   "height": "250",
   "hidden": "",
   "icon": "",
@@ -27,7 +27,7 @@
   "inline": "",
   "inputmode": "",
   "items": "Item #1\n>Item #2\n",
-  "left": "15",
+  "left": "45",
   "mAll": "",
   "mBottom": "",
   "mLeft": "",
@@ -64,9 +64,9 @@
   "right": "auto",
   "script": "",
   "style": "",
-  "top": "90",
+  "top": "125",
   "validation": "",
   "value": "",
-  "valueCols": 10,
-  "width": "290"
+  "valueCols": 11,
+  "width": "250"
 }

@@ -24,12 +24,12 @@
   "fontWeight": "",
   "groupStyle": "",
   "grouping": "",
-  "height": "auto",
+  "height": "40",
   "hidden": "",
   "icon": "",
   "iconTitle": "",
   "id": "btnSelList",
-  "left": "190",
+  "left": "175",
   "mAll": "",
   "mBottom": "",
   "mLeft": "",
@@ -60,7 +60,7 @@
   "size": " btn-md",
   "style": "",
   "toggleControl": "",
-  "top": "375",
+  "top": "400",
   "value": "Select List",
-  "width": "auto"
+  "width": "115"
 }

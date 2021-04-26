@@ -54,6 +54,15 @@
         "Elements",
         "inptNewListName.json"
       ]
+    },
+    {
+      "!type": "External",
+      "file": [
+        "forms",
+        "yourLists",
+        "Elements",
+        "hbgrPageNav.json"
+      ]
     }
   ],
   "class": "",
