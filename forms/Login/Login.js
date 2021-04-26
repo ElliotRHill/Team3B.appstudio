@@ -65,3 +65,7 @@ btnLogin.onclick=function(){
       console.log('the user and pw do not match')
     }
 }
+
+btnAccount.onclick=function(){
+  ChangeForm(createAccount)
+}
