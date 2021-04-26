@@ -5,6 +5,7 @@ let pw = "BiA375.ekh"
 let netID = "ekh74960"
 let schema = "375groupb3"
 
+
 yourLists.onshow=function(){   
   hbgrPageNavYourList.hidden = false
   
@@ -60,8 +61,8 @@ let newListName = ""
 
 btnAddList.onclick=function(){
     newListName = inptNewListName.value
-    let listUserID = Math.floor(Math.random() * 101)
-    query = "INSERT INTO lists (`list_name`,`user_id`) VALUES ('" + newListName + "', '" + listUserID + "')"
+    //let listUserID = Math.floor(Math.random() * 101)
+    query = "INSERT INTO lists (`list_name`,`user_id`) VALUES ('" + newListName + "', '" + userID + "')"
     req = Ajax("https://ormond.creighton.edu/courses/375/ajax-connection.php", "POST", "host=ormond.creighton.edu&user=" + netID + "&pass=" + pw + "&database=" + schema + "&query=" + query)
     if (req.status == 200) { 
         if (req.responseText == 500)    
@@ -79,7 +80,10 @@ btnAddList.onclick=function(){
 let selectValue = ""
 
 btnSelList.onclick=function(){
+    selectValue = $("input[name=rdoLists]:checked").prop("value")
     drpLists.value = selectValue
+    
+    ChangeForm(newList)
 }
 
 
