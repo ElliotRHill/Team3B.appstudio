@@ -32,7 +32,7 @@
   "id": "inptAddItem",
   "inputType": "text",
   "inputmode": "",
-  "left": 15,
+  "left": "125",
   "leftText": "Item",
   "mAll": "",
   "mBottom": "",
@@ -83,9 +83,9 @@
   "spellcheck": "true",
   "step": "",
   "style": "",
-  "top": "90",
+  "top": "110",
   "validation": "",
   "value": "",
   "valueCols": 10,
-  "width": "175"
+  "width": "190"
 }

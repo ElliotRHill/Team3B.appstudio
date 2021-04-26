@@ -45,6 +45,15 @@
         "Elements",
         "selShowList.json"
       ]
+    },
+    {
+      "!type": "External",
+      "file": [
+        "forms",
+        "newList",
+        "Elements",
+        "hmbrPageNavNewList.json"
+      ]
     }
   ],
   "class": "",

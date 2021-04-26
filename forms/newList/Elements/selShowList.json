@@ -18,8 +18,8 @@
   "fontWeight": "",
   "footer": "",
   "header": "Items",
-  "headerCols": 2,
-  "height": "275",
+  "headerCols": 1,
+  "height": "250",
   "hidden": "",
   "icon": "",
   "iconTitle": "",
@@ -65,10 +65,10 @@
   "script": "",
   "size": "12",
   "style": "",
-  "top": "165",
+  "top": "175",
   "validation": "",
   "value": "",
-  "valueCols": 10,
+  "valueCols": 11,
   "values": "",
-  "width": "290"
+  "width": "295"
 }

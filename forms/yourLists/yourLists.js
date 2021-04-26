@@ -5,7 +5,9 @@ let pw = "BiA375.ekh"
 let netID = "ekh74960"
 let schema = "375groupb3"
 
-yourLists.onshow=function(){        
+yourLists.onshow=function(){   
+  hbgrPageNavYourList.hidden = false
+  
   query = "SELECT list_name FROM lists"
   req = Ajax("https://ormond.creighton.edu/courses/375/ajax-connection.php", "POST", "host=ormond.creighton.edu&user=" + netID + "&pass=" + pw + "&database=" + schema + "&query=" + query)
 
@@ -52,8 +54,12 @@ btnDeleteList.onclick=function(){
             console.log(`Error: ${req.status}`)
 }
 
+
+// declare global variable
+let newListName = ""
+
 btnAddList.onclick=function(){
-    let newListName = inptNewListName.value
+    newListName = inptNewListName.value
     let listUserID = Math.floor(Math.random() * 101)
     query = "INSERT INTO lists (`list_name`,`user_id`) VALUES ('" + newListName + "', '" + listUserID + "')"
     req = Ajax("https://ormond.creighton.edu/courses/375/ajax-connection.php", "POST", "host=ormond.creighton.edu&user=" + netID + "&pass=" + pw + "&database=" + schema + "&query=" + query)
@@ -66,21 +72,32 @@ btnAddList.onclick=function(){
         console.log(`Error: ${req.status}`)
     
     ChangeForm(newList)
+    drpLists.value = newListName
+}
+
+// declare global variable
+let selectValue = ""
+
+btnSelList.onclick=function(){
+    drpLists.value = selectValue
 }
 
 
-hbgrPageNav.onclick=function(){
+hbgrPageNavYourList.onclick=function(s){
     if (typeof(s) == "object") {
        return
     } else {
        switch(s) {
-        case "Your lists":
+        case "Home":
             ChangeForm(yourLists)
             break;
-        case "Create new list":
+        case "View Lists":
             ChangeForm(newList)
             break;
-        case "Find Store":
+        case "Create New List":
+            ChangeForm(newList)
+            break;            
+        case "Nearby Stores":
             ChangeForm(findStore)
             break;
         case "Weather":
