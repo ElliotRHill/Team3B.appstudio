@@ -45,6 +45,15 @@
         "Elements",
         "btnCreateAcc.json"
       ]
+    },
+    {
+      "!type": "External",
+      "file": [
+        "forms",
+        "createAccount",
+        "Elements",
+        "lblUserWarning.json"
+      ]
     }
   ],
   "class": "",
