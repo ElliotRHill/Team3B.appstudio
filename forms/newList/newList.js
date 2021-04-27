@@ -29,7 +29,7 @@ function getListID(listName, userId) {
         if (results.length == 0)
             console.log("No results")
         else { 
-            listID = results[0]
+            return results[0]
         }
     } else
         console.log(`Error code: ${req.status}`) 
@@ -44,7 +44,7 @@ function getProductID(item) {
         if (results.length == 0)
             console.log("No results")
         else { 
-            productID = results[0]
+            return results[0]
         }
     } else
         console.log(`Error code: ${req.status}`)     
@@ -88,7 +88,7 @@ newList.onshow=function(){
     reloadListItems(drpLists.value)
     
     // get list ID
-    getListID(drpLists.value, userID)
+    listID = getListID(drpLists.value, userID)
      
 }
 
@@ -104,7 +104,7 @@ drpLists.onclick=function(s){
       reloadListItems(s)
 
       // get list ID
-      getListID(s, userID)       
+      listID = getListID(s, userID)       
     }
 }
 
@@ -113,7 +113,7 @@ btnSubmit.onclick=function(){
   let newItem = inptAddItem.value  
   
   // get product ID
-  getProductID(newItem)  
+  productID = getProductID(newItem)
   
   // insert query
   query = "INSERT INTO list_items (`listID`,`product_id`) VALUES ('" + listID + "', '" + productID + "')"
@@ -121,7 +121,8 @@ btnSubmit.onclick=function(){
     if (req.status == 200) { 
         if (req.responseText == 500) {    
             console.log("You have successfully added the product!")
-            reloadListItems(drpLists.value)            
+            reloadListItems(drpLists.value)
+            // inptAddItem.value.clear()
         } else
             console.log("There was a problem with adding the product to the database.")
     } else 
@@ -130,22 +131,27 @@ btnSubmit.onclick=function(){
 
 
 btnDelItems.onclick=function(){
-    selShowList.clear()
-
     // get listID
-    getListID(drpLists.value, userID)
-
-    // delete selected items
-    for (i = 0; i < results.length; i++) 
-        delItems(list, product)
+    listID = getListID(drpLists.value, userID)
+    console.log(selShowList.text)
+    
+    // delete selected items  
+    for (i = 0; i < selShowList.text.length; i++) {
+        var delItem = selShowList.text[i]
+        // console.log(delItem)
+        productID = getProductID(delItem)
+        // console.log(productID)
+        delItems(listID, productID)
+    }
+    
+    // reload list
+    reloadListItems(drpLists.value)
 }
 
 
 btnClearList.onclick=function(){
-  selShowList.clear()
-  
   // get listID
-  getListID(drpLists.value, userID)
+  listID = getListID(drpLists.value, userID)
   
   // clear items in DB
   query = "DELETE FROM list_items WHERE listID = '" + listID + "'"
@@ -153,6 +159,7 @@ btnClearList.onclick=function(){
     if (req.status == 200) { 
         if (req.responseText == 500) {    
             console.log("You have successfully cleared the list!")
+            selShowList.clear()
             reloadListItems(drpLists.value)            
         } else
             console.log("There was a problem with clearing the list.")
