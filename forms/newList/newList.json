@@ -54,6 +54,24 @@
         "Elements",
         "hmbrPageNavNewList.json"
       ]
+    },
+    {
+      "!type": "External",
+      "file": [
+        "forms",
+        "newList",
+        "Elements",
+        "Button1.json"
+      ]
+    },
+    {
+      "!type": "External",
+      "file": [
+        "forms",
+        "newList",
+        "Elements",
+        "Button2.json"
+      ]
     }
   ],
   "class": "",

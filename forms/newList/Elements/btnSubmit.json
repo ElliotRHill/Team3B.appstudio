@@ -24,7 +24,7 @@
   "fontWeight": "",
   "groupStyle": "",
   "grouping": "",
-  "height": "auto",
+  "height": "38",
   "hidden": "",
   "icon": "",
   "iconTitle": "",
@@ -57,10 +57,10 @@
   "popTitle": "Title",
   "right": "auto",
   "script": "",
-  "size": " btn-md",
+  "size": " btn-sm",
   "style": "",
   "toggleControl": "",
   "top": "110",
-  "value": "Add Item",
-  "width": "100"
+  "value": "Add",
+  "width": "50"
 }
