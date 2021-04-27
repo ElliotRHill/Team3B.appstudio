@@ -1,7 +1,9 @@
 
 let listID = ""
 let userID = 1
+let productID = ""
 
+// reusable functions
 function reloadListItems(listName) {
     query = "SELECT product_name FROM list_items LEFT JOIN lists ON list_items.listID = lists.listID LEFT JOIN products ON list_items.product_id = products.product_id WHERE list_name = '" + listName + "'"
     req = Ajax("https://ormond.creighton.edu/courses/375/ajax-connection.php", "POST", "host=ormond.creighton.edu&user=" + netID + "&pass=" + pw + "&database=" + schema + "&query=" + query)
@@ -9,7 +11,7 @@ function reloadListItems(listName) {
     if (req.status == 200) { 
         results = JSON.parse(req.responseText)
         if (results.length == 0)
-            console.log("No results")
+            selShowList.addItem("No items")
         else { 
             selShowList.clear()
             for (i = 0; i < results.length; i++)
@@ -49,6 +51,19 @@ function getProductID(item) {
 }
 
 
+function delItems(list, product) {
+  query = "DELETE FROM list_items WHERE listID = '" + list + "' AND product_id = '" + product + "'"
+  req = Ajax("https://ormond.creighton.edu/courses/375/ajax-connection.php", "POST", "host=ormond.creighton.edu&user=" + netID + "&pass=" + pw + "&database=" + schema + "&query=" + query)
+    if (req.status == 200) { 
+        if (req.responseText == 500) {    
+            console.log("You have successfully deleted the product!")
+        } else
+            console.log("There was a problem with deleting the product.")
+    } else 
+        console.log(`Error: ${req.status}`)
+}
+
+
 newList.onshow=function(){
     hmbrPageNavNewList.hidden = false
     
@@ -59,7 +74,7 @@ newList.onshow=function(){
     if (req.status == 200) { 
         results = JSON.parse(req.responseText)
         if (results.length == 0)    
-           console.log("There are no states in the database.")
+            console.log("There are no states in the database.")
         else {
             drpLists.clear()
             for (i = 0; i < results.length; i++)
@@ -69,6 +84,7 @@ newList.onshow=function(){
         console.log(`Error code: ${req.status}`)
     
     // reload list items 
+    selShowList.clear()
     reloadListItems(drpLists.value)
     
     // get list ID
@@ -78,23 +94,23 @@ newList.onshow=function(){
 
 
 drpLists.onclick=function(s){
-    if (typeof(s) == "object")   
+  if (typeof(s) == "object")   
       return                    
-    else {  
-        drpLists.value = s
-        // reload list items
-        reloadListItems(s)
-       
-        // get list ID
-        getListID(s, userID)       
+  else {  
+      selShowList.clear()
+      
+      drpLists.value = s
+      // reload list items
+      reloadListItems(s)
+
+      // get list ID
+      getListID(s, userID)       
     }
 }
 
 
 btnSubmit.onclick=function(){
-  let newItem = inptAddItem.value
-  let productID = ""
-  
+  let newItem = inptAddItem.value  
   
   // get product ID
   getProductID(newItem)  
@@ -114,12 +130,34 @@ btnSubmit.onclick=function(){
 
 
 btnDelItems.onclick=function(){
-  
+    selShowList.clear()
+
+    // get listID
+    getListID(drpLists.value, userID)
+
+    // delete selected items
+    for (i = 0; i < results.length; i++) 
+        delItems(list, product)
 }
 
 
 btnClearList.onclick=function(){
+  selShowList.clear()
   
+  // get listID
+  getListID(drpLists.value, userID)
+  
+  // clear items in DB
+  query = "DELETE FROM list_items WHERE listID = '" + listID + "'"
+  req = Ajax("https://ormond.creighton.edu/courses/375/ajax-connection.php", "POST", "host=ormond.creighton.edu&user=" + netID + "&pass=" + pw + "&database=" + schema + "&query=" + query)
+    if (req.status == 200) { 
+        if (req.responseText == 500) {    
+            console.log("You have successfully cleared the list!")
+            reloadListItems(drpLists.value)            
+        } else
+            console.log("There was a problem with clearing the list.")
+    } else 
+        console.log(`Error: ${req.status}`)
 }
 
 
@@ -132,9 +170,9 @@ hmbrPageNavNewList.onclick=function(s){
             ChangeForm(yourLists)
             break;
         case "View Lists":
-            ChangeForm(newList)
+            ChangeForm(yourLists)
             break;
-        case "Create New List":
+        case "Add to Current List":
             ChangeForm(newList)
             break;            
         case "Nearby Stores":

@@ -96,9 +96,9 @@ hbgrPageNavYourList.onclick=function(s){
             ChangeForm(yourLists)
             break;
         case "View Lists":
-            ChangeForm(newList)
+            ChangeForm(yourLists)
             break;
-        case "Create New List":
+        case "Add to Current List":
             ChangeForm(newList)
             break;            
         case "Nearby Stores":
