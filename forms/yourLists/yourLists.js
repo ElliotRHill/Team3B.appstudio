@@ -102,7 +102,7 @@ hbgrPageNavYourList.onclick=function(s){
             ChangeForm(newList)
             break;            
         case "Nearby Stores":
-            ChangeForm(findStore)
+            ChangeForm(googleAPI)
             break;
         case "Weather":
             ChangeForm(weather)
