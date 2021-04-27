@@ -1,6 +1,9 @@
 //Array with call from Postman
 grocStores = ["Walmart: 360 Saddle Creek Rd, Omaha, NE","Hy-Vee: 2323 W Broadway, Council Bluffs, IA","ALDI: 4801 N 30th St, Omaha, NE","Family Dollar: 834 S 24th St, Omaha, NE","ALDI: 885 S 72nd St, Omaha, NE","Family Dollar: 2601 N 16th St, Omaha, NE","Hy-Vee: 7910 Cass St, Omaha, NE","Family Dollar: 1500 N 24th St, Omaha, NE","Trader Joe's: 3552 Leavenworth St, Omaha, NE"]
-
+mapStores = ["Walmart","Hy-Vee: W Broadway","ALDI: N 30th","Family Dollar: S 24th","ALDI: S 72nd","Family Dollar: N 16th","Hy-Vee: Cass","Family Dollar: N 24th","Trader Joe's"]
+function init() { 
+  document.getElementById("mapStores").style.color = 'blue';
+}
 
 
 //Declared arrays for markers
@@ -140,7 +143,7 @@ function gotLocation(location, lat, long) {
     point1 = new google.maps.LatLng(location.coords.latitude, location.coords.longitude)
     marker1 = gmLocations.setMarker({
         position: point1,
-        title: "My Location"    // hover by balloon tip tooltip name
+        label: "My Location"    // hover by balloon tip tooltip name
     })
     //All hard-coded below, but the loop takes care of it
     /*
@@ -213,7 +216,7 @@ function gotLocation(location, lat, long) {
       tempPoint = new google.maps.LatLng(myPlaces[i].lat,myPlaces[i].lon)
       tempMarker = gmLocations.setMarker({
         position: tempPoint,
-        title: grocStores[i]
+        label: mapStores[i] 
       })
     }
 }
