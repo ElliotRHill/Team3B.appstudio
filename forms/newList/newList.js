@@ -2,6 +2,24 @@
 let listID = ""
 let userID = 1
 
+function reloadListItems(listName) {
+    query = "SELECT product_name FROM list_items LEFT JOIN lists ON list_items.listID = lists.listID LEFT JOIN products ON list_items.product_id = products.product_id WHERE list_name = '" + listName + "'"
+    req = Ajax("https://ormond.creighton.edu/courses/375/ajax-connection.php", "POST", "host=ormond.creighton.edu&user=" + netID + "&pass=" + pw + "&database=" + schema + "&query=" + query)
+
+    if (req.status == 200) { 
+        results = JSON.parse(req.responseText)
+        if (results.length == 0)
+            console.log("No results")
+        else { 
+            selShowList.clear()
+            for (i = 0; i < results.length; i++)
+                selShowList.addItem(results[i])
+        }
+    } else
+        console.log(`Error code: ${req.status}`)    
+}
+
+
 newList.onshow=function(){
     hmbrPageNavNewList.hidden = false
     
