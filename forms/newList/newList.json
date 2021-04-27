@@ -61,7 +61,7 @@
         "forms",
         "newList",
         "Elements",
-        "Button1.json"
+        "btnDelItems.json"
       ]
     },
     {
@@ -70,7 +70,7 @@
         "forms",
         "newList",
         "Elements",
-        "Button2.json"
+        "btnClearList.json"
       ]
     }
   ],

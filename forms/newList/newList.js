@@ -19,6 +19,35 @@ function reloadListItems(listName) {
         console.log(`Error code: ${req.status}`)    
 }
 
+function getListID(listName, userId) {
+    query = "SELECT listID FROM lists WHERE list_name = '" + listName + "' AND user_id = '" + userId + "'"
+    req = Ajax("https://ormond.creighton.edu/courses/375/ajax-connection.php", "POST", "host=ormond.creighton.edu&user=" + netID + "&pass=" + pw + "&database=" + schema + "&query=" + query)
+    if (req.status == 200) { 
+        results = JSON.parse(req.responseText)
+        if (results.length == 0)
+            console.log("No results")
+        else { 
+            listID = results[0]
+        }
+    } else
+        console.log(`Error code: ${req.status}`) 
+}
+
+
+function getProductID(item) {
+  query = "SELECT product_id FROM products WHERE product_name = '" + item + "'"
+  req = Ajax("https://ormond.creighton.edu/courses/375/ajax-connection.php", "POST", "host=ormond.creighton.edu&user=" + netID + "&pass=" + pw + "&database=" + schema + "&query=" + query)
+    if (req.status == 200) { 
+        results = JSON.parse(req.responseText)
+        if (results.length == 0)
+            console.log("No results")
+        else { 
+            productID = results[0]
+        }
+    } else
+        console.log(`Error code: ${req.status}`)     
+}
+
 
 newList.onshow=function(){
     hmbrPageNavNewList.hidden = false
@@ -39,34 +68,12 @@ newList.onshow=function(){
     } else
         console.log(`Error code: ${req.status}`)
     
-    // load list items 
-    query = "SELECT product_name FROM list_items LEFT JOIN lists ON list_items.listID = lists.listID LEFT JOIN products ON list_items.product_id = products.product_id WHERE list_name = '" + drpLists.value + "'"
-    req = Ajax("https://ormond.creighton.edu/courses/375/ajax-connection.php", "POST", "host=ormond.creighton.edu&user=" + netID + "&pass=" + pw + "&database=" + schema + "&query=" + query)
-
-    if (req.status == 200) { 
-        results = JSON.parse(req.responseText)
-        if (results.length == 0)
-            console.log("No results")
-        else { 
-            selShowList.clear()
-            for (i = 0; i < results.length; i++)
-                selShowList.addItem(results[i])
-        }
-    } else
-        console.log(`Error code: ${req.status}`)
+    // reload list items 
+    reloadListItems(drpLists.value)
     
     // get list ID
-    query = "SELECT listID FROM lists WHERE list_name = '" + drpLists.value + "' AND user_id = '" + userID + "'"
-    req = Ajax("https://ormond.creighton.edu/courses/375/ajax-connection.php", "POST", "host=ormond.creighton.edu&user=" + netID + "&pass=" + pw + "&database=" + schema + "&query=" + query)
-    if (req.status == 200) { 
-        results = JSON.parse(req.responseText)
-        if (results.length == 0)
-            console.log("No results")
-        else { 
-            listID = results[0]
-        }
-    } else
-        console.log(`Error code: ${req.status}`)     
+    getListID(drpLists.value, userID)
+     
 }
 
 
@@ -75,34 +82,11 @@ drpLists.onclick=function(s){
       return                    
     else {  
         drpLists.value = s
-        
-        query = "SELECT product_name FROM list_items LEFT JOIN lists ON list_items.listID = lists.listID LEFT JOIN products ON list_items.product_id = products.product_id WHERE list_name = '" + s + "'"
-        req = Ajax("https://ormond.creighton.edu/courses/375/ajax-connection.php", "POST", "host=ormond.creighton.edu&user=" + netID + "&pass=" + pw + "&database=" + schema + "&query=" + query)
-
-        if (req.status == 200) { 
-            results = JSON.parse(req.responseText)
-            if (results.length == 0)
-                console.log("No results")
-            else { 
-                selShowList.clear()
-                for (i = 0; i < results.length; i++)
-                    selShowList.addItem(results[i])
-            }
-        } else
-            console.log(`Error code: ${req.status}`)
-        
+        // reload list items
+        reloadListItems(s)
+       
         // get list ID
-        query = "SELECT listID FROM lists WHERE list_name = '" + s + "' AND user_id = '" + userID + "'"
-        req = Ajax("https://ormond.creighton.edu/courses/375/ajax-connection.php", "POST", "host=ormond.creighton.edu&user=" + netID + "&pass=" + pw + "&database=" + schema + "&query=" + query)
-        if (req.status == 200) { 
-            results = JSON.parse(req.responseText)
-            if (results.length == 0)
-                console.log("No results")
-            else { 
-                listID = results[0]
-            }
-        } else
-            console.log(`Error code: ${req.status}`)        
+        getListID(s, userID)       
     }
 }
 
@@ -113,17 +97,7 @@ btnSubmit.onclick=function(){
   
   
   // get product ID
-  query = "SELECT product_id FROM products WHERE product_name = '" + newItem + "'"
-  req = Ajax("https://ormond.creighton.edu/courses/375/ajax-connection.php", "POST", "host=ormond.creighton.edu&user=" + netID + "&pass=" + pw + "&database=" + schema + "&query=" + query)
-    if (req.status == 200) { 
-        results = JSON.parse(req.responseText)
-        if (results.length == 0)
-            console.log("No results")
-        else { 
-            productID = results[0]
-        }
-    } else
-        console.log(`Error code: ${req.status}`)  
+  getProductID(newItem)  
   
   // insert query
   query = "INSERT INTO list_items (`listID`,`product_id`) VALUES ('" + listID + "', '" + productID + "')"
@@ -131,26 +105,23 @@ btnSubmit.onclick=function(){
     if (req.status == 200) { 
         if (req.responseText == 500) {    
             console.log("You have successfully added the product!")
-            
-            query = "SELECT product_name FROM list_items LEFT JOIN lists ON list_items.listID = lists.listID LEFT JOIN products ON list_items.product_id = products.product_id WHERE list_name = '" + drpLists.value + "'"
-            req = Ajax("https://ormond.creighton.edu/courses/375/ajax-connection.php", "POST", "host=ormond.creighton.edu&user=" + netID + "&pass=" + pw + "&database=" + schema + "&query=" + query)
-
-            if (req.status == 200) { 
-                results = JSON.parse(req.responseText)
-                if (results.length == 0)
-                    console.log("No results")
-                else { 
-                    selShowList.clear()
-                    for (i = 0; i < results.length; i++)
-                        selShowList.addItem(results[i])
-            }} else
-                console.log(`Error code: ${req.status}`)
-            
+            reloadListItems(drpLists.value)            
         } else
             console.log("There was a problem with adding the product to the database.")
     } else 
         console.log(`Error: ${req.status}`)
 }
+
+
+btnDelItems.onclick=function(){
+  
+}
+
+
+btnClearList.onclick=function(){
+  
+}
+
 
 hmbrPageNavNewList.onclick=function(s){
     if (typeof(s) == "object") {
@@ -178,3 +149,7 @@ hmbrPageNavNewList.onclick=function(s){
         }
     }    
 }
+
+
+
+

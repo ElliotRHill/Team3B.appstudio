@@ -28,14 +28,14 @@
   "hidden": "",
   "icon": "",
   "iconTitle": "",
-  "id": "Button2",
-  "left": "235",
+  "id": "btnDelItems",
+  "left": "110",
   "mAll": "",
   "mBottom": "",
   "mLeft": "",
   "mRight": "",
   "mTop": "",
-  "onclick": "",
+  "onclick": "btnDelItems.onclick()",
   "onmousedown": "",
   "onmousemove": "",
   "onmouseout": "",
@@ -61,6 +61,6 @@
   "style": "",
   "toggleControl": "",
   "top": "160",
-  "value": "Clear List",
-  "width": "80"
+  "value": "Delete Item(s)",
+  "width": "115"
 }
