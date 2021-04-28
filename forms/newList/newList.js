@@ -57,6 +57,8 @@ function delItems(list, product) {
     if (req.status == 200) { 
         if (req.responseText == 500) {    
             console.log("You have successfully deleted the product!")
+            selShowList.clear()
+            reloadListItems(drpLists.value)            
         } else
             console.log("There was a problem with deleting the product.")
     } else 
@@ -133,16 +135,20 @@ btnSubmit.onclick=function(){
 btnDelItems.onclick=function(){
     // get listID
     listID = getListID(drpLists.value, userID)
-    console.log(selShowList.text)
+    console.log(typeof(selShowList.text))
     
-    // delete selected items  
-    for (i = 0; i < selShowList.text.length; i++) {
-        var delItem = selShowList.text[i]
-        // console.log(delItem)
+    // delete selected items
+    let delItem = ""
+    if (typeof(selShowList.text) == "string") {
+        delItem = selShowList.text
         productID = getProductID(delItem)
-        // console.log(productID)
         delItems(listID, productID)
-    }
+    } else {
+        for (i = 0; i < selShowList.text.length; i++) {
+            delItem = selShowList.text[i]
+            productID = getProductID(delItem)
+            delItems(listID, productID)
+    }}
     
     // reload list
     reloadListItems(drpLists.value)
