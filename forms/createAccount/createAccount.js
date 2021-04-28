@@ -1,3 +1,7 @@
+createAccount.onshow=function(){
+  lblUserWarning.hidden=True
+}
+
 btnCreateAcc.onclick = function() {
   query = "SELECT username FROM account;"
   req = Ajax("https://ormond.creighton.edu/courses/375/ajax-connection.php", "POST", "host=ormond.creighton.edu&user=" + netID + "&pass=" + pw + "&database=" + databaseSchema + "&query=" + query)
@@ -11,7 +15,7 @@ btnCreateAcc.onclick = function() {
         console.log('this user exists')
         checkUser = 1
         // userIndex = i
-        lblUserWarning.hidden=false
+        lblUserWarning.hidden=False
         break
       } else {
         checkUser = 0
@@ -22,7 +26,5 @@ btnCreateAcc.onclick = function() {
     //Handle that. 
     console.log('failure user')
   }
-  
-  
   
 }

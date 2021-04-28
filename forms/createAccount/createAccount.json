@@ -70,7 +70,7 @@
   "onhide": "",
   "onkeypress": "",
   "onresize": "",
-  "onshow": "",
+  "onshow": "createAccount.onshow()",
   "openMode": "none",
   "parentForm": "",
   "position": "absolute",

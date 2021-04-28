@@ -16,7 +16,7 @@
   "fontStyle": "",
   "fontWeight": "",
   "height": "auto",
-  "hidden": "display:none; ",
+  "hidden": "",
   "id": "lblUserWarning",
   "labelStyle": "text",
   "left": 17,
