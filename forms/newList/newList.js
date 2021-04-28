@@ -56,9 +56,7 @@ function delItems(list, product) {
   req = Ajax("https://ormond.creighton.edu/courses/375/ajax-connection.php", "POST", "host=ormond.creighton.edu&user=" + netID + "&pass=" + pw + "&database=" + schema + "&query=" + query)
     if (req.status == 200) { 
         if (req.responseText == 500) {    
-            console.log("You have successfully deleted the product!")
-            selShowList.clear()
-            reloadListItems(drpLists.value)            
+            console.log("You have successfully deleted the product!")           
         } else
             console.log("There was a problem with deleting the product.")
     } else 
@@ -143,6 +141,9 @@ btnDelItems.onclick=function(){
         delItem = selShowList.text
         productID = getProductID(delItem)
         delItems(listID, productID)
+        
+        selShowList.clear()
+        reloadListItems(drpLists.value)
     } else {
         for (i = 0; i < selShowList.text.length; i++) {
             delItem = selShowList.text[i]
