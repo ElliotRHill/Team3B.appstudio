@@ -16,7 +16,7 @@
         "forms",
         "newList",
         "Elements",
-        "Dropdown1.json"
+        "drpLists.json"
       ]
     },
     {
@@ -43,7 +43,34 @@
         "forms",
         "newList",
         "Elements",
-        "lblShowList.json"
+        "selShowList.json"
+      ]
+    },
+    {
+      "!type": "External",
+      "file": [
+        "forms",
+        "newList",
+        "Elements",
+        "hmbrPageNavNewList.json"
+      ]
+    },
+    {
+      "!type": "External",
+      "file": [
+        "forms",
+        "newList",
+        "Elements",
+        "btnDelItems.json"
+      ]
+    },
+    {
+      "!type": "External",
+      "file": [
+        "forms",
+        "newList",
+        "Elements",
+        "btnClearList.json"
       ]
     }
   ],
@@ -61,7 +88,7 @@
   "onhide": "",
   "onkeypress": "",
   "onresize": "",
-  "onshow": "",
+  "onshow": "newList.onshow()",
   "openMode": "none",
   "parentForm": "",
   "position": "absolute",
