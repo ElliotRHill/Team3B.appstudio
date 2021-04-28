@@ -8,13 +8,16 @@ hmbMenu.onclick=function(s){
        return
     } else {
        switch(s) {
-        case "Your lists":
+        case "Home":
             ChangeForm(yourLists)
             break;
-        case "Create new list":
+        case "View Lists":
             ChangeForm(newList)
             break;
-        case "Find Store":
+        case "Create New List":
+            ChangeForm(newList)
+            break;            
+        case "Nearby Stores":
             ChangeForm(findStore)
             break;
         case "Weather":
@@ -24,7 +27,7 @@ hmbMenu.onclick=function(s){
             ChangeForm(coupons)
             break;
         }
-    }
+    } 
 }
 
 

@@ -24,8 +24,6 @@ function onXHRLoad() {
     
     // 2. *** put your textarea control name here ****
     txtaLocation.value = message
-
-
     
     // if want to add to database call a function here that does that
     // addToDatabase()
