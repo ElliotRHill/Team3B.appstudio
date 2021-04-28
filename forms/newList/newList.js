@@ -141,7 +141,7 @@ btnDelItems.onclick=function(){
         delItem = selShowList.text
         productID = getProductID(delItem)
         delItems(listID, productID)
-        
+        // reload list
         selShowList.clear()
         reloadListItems(drpLists.value)
     } else {
@@ -149,6 +149,8 @@ btnDelItems.onclick=function(){
             delItem = selShowList.text[i]
             productID = getProductID(delItem)
             delItems(listID, productID)
+        selShowList.clear()
+        reloadListItems(drpLists.value)
     }}
     
     // reload list
