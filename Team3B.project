@@ -66,6 +66,14 @@
             "yourLists",
             "yourLists.json"
           ]
+        },
+        {
+          "!type": "External",
+          "file": [
+            "forms",
+            "recipeAPI",
+            "recipeAPI.json"
+          ]
         }
       ],
       "configxml": null,
@@ -87,7 +95,7 @@
       "eslintRules": null,
       "expanded_pmp": null,
       "extraheaders": null,
-      "firstform": "googleAPI",
+      "firstform": "recipeAPI",
       "fontFamily": "system",
       "googlePlayKey": "certificates/google.json",
       "googlePlayTrack": "production",
