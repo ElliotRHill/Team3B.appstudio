@@ -14,36 +14,45 @@
       "!type": "External",
       "file": [
         "forms",
-        "Login",
+        "createAccount",
         "Elements",
-        "inptUser.json"
+        "inptCreateUser.json"
       ]
     },
     {
       "!type": "External",
       "file": [
         "forms",
-        "Login",
+        "createAccount",
         "Elements",
-        "inptPassword.json"
+        "inptPassOne.json"
       ]
     },
     {
       "!type": "External",
       "file": [
         "forms",
-        "Login",
+        "createAccount",
         "Elements",
-        "btnLogin.json"
+        "inptPassTwo.json"
       ]
     },
     {
       "!type": "External",
       "file": [
         "forms",
-        "Login",
+        "createAccount",
         "Elements",
-        "btnAccount.json"
+        "btnCreateAcc.json"
+      ]
+    },
+    {
+      "!type": "External",
+      "file": [
+        "forms",
+        "createAccount",
+        "Elements",
+        "lblUserWarning.json"
       ]
     }
   ],
@@ -53,7 +62,7 @@
   "expanded_pmp": null,
   "fullScreen": "true",
   "height": 460,
-  "id": "Login",
+  "id": "createAccount",
   "language": "JavaScript",
   "left": "0",
   "locked": false,
@@ -61,7 +70,7 @@
   "onhide": "",
   "onkeypress": "",
   "onresize": "",
-  "onshow": "",
+  "onshow": "createAccount.onshow()",
   "openMode": "none",
   "parentForm": "",
   "position": "absolute",
@@ -70,5 +79,5 @@
   "style": "",
   "theme": "",
   "top": "0",
-  "width": "350"
+  "width": 320
 }
