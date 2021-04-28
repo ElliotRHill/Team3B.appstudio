@@ -25,7 +25,7 @@
         "forms",
         "createAccount",
         "Elements",
-        "inptCreateUserCopy.json"
+        "inptPassOne.json"
       ]
     },
     {
@@ -34,7 +34,7 @@
         "forms",
         "createAccount",
         "Elements",
-        "inptCreateUserCopyCopy.json"
+        "inptPassTwo.json"
       ]
     },
     {
