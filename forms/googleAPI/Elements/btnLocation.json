@@ -2,7 +2,8 @@
   "!type": "Button_bs4",
   "ChangeForm": "",
   "appearance": " btn-secondary",
-  "backgroundColor": "",
+
+  "backgroundColor": "green",
   "badge": "",
   "badgeAppearance": " badge-info",
   "blockLevel": "",
@@ -24,12 +25,12 @@
   "fontWeight": "",
   "groupStyle": "",
   "grouping": "",
-  "height": "auto",
+  "height": 33,
   "hidden": "",
   "icon": "",
   "iconTitle": "",
   "id": "btnLocation",
-  "left": 70,
+  "left": 5,
   "mAll": "",
   "mBottom": "",
   "mLeft": "",
@@ -60,7 +61,7 @@
   "size": " btn-md",
   "style": "",
   "toggleControl": "",
-  "top": 12,
-  "value": "See Locations ",
-  "width": "auto"
+  "top": 353,
+  "value": "1. Nearby",
+  "width": 99
 }
