@@ -218,7 +218,11 @@ function gotLocation(location, lat, long) {
       tempPoint = new google.maps.LatLng(myPlaces[i].lat,myPlaces[i].lon)
       tempMarker = gmLocations.setMarker({
         position: tempPoint,
+<<<<<<< Updated upstream
         label: mapStores[i] 
+=======
+        label: grocStores[i]
+>>>>>>> Stashed changes
       })
     }
 }
