@@ -9,7 +9,7 @@ lon = [-95.9811922, -95.879364, -95.9559953, -95.94750669999999, -96.0222567, -9
 
 //API call
 // 1. *** use your own url copied from Postman ****
-let requestURL = "https://maps.googleapis.com/maps/api/place/textsearch/json?query=grocery store &key=AIzaSyDoaVtASvuYckCYDer224otaiYRZApFXiw&location=41.265331,-95.949364&radius=2000&type=grocery_or_supermarket &maxprice=10"
+let requestURL = "https://maps.googleapis.com/maps/api/place/textsearch/json?query=grocery store &key=AIzaSyDoaVtASvuYckCYDer224otaiYRZApFXiw&location=41.265331,-95.949364&radius=1000&type=grocery_or_supermarket"
 
 function onXHRLoad() {
     let message = ""
@@ -19,7 +19,7 @@ function onXHRLoad() {
     
     for (i = 0; i <= apiData.results.length - 1; i++) {
         console.log(`${apiData.results[i].formatted_address}`)
-        message = message + apiData.results[i].name + "\n" + apiData.results[i].formatted_address + "\n" + "\n" 
+        message = message + apiData.results[i].formatted_address + "\n" + apiData.results[i].name + "\n" + "\n" 
     }
     
     // 2. *** put your textarea control name here ****
@@ -77,29 +77,16 @@ btnLocation.onclick=function(){
 
 //Add to select
 googleAPI.onshow=function(){
-  selLoc.clear()   
+  drpLocation.clear()   
     // put array of flavors in the dropdown (called populating it)
     for (i = 0; i < myPlaces.length; i++) 
-        selLoc.addItem(myPlaces[i].name)
+        drpLocation.addItem(myPlaces[i].name)
 }
  
 
 // multiple list choices allowed; uses button onclick
 // Comment code above, and uncomment code below
-/*
-btnFavLoc.onclick=function(){
-  // returns array of the choices' text
-    let message = "You chose:"
-  for (i = 0; i < selLoc.text.length; i++)
-     message = message + "\n" + selLoc.text[i] + " \n" + "\n" 
-     
-  // remove the last comma
-  // slice drops last 2 characters (comma and space)
-  //     starts at 0, and goes to end of the 
-  //     string minus 2 characters
-  message = message.slice(0, -2)
-  txtaLocation.value = message
-*/
+
 
 
 
@@ -107,17 +94,21 @@ btnFavLoc.onclick=function(){
 ////////////////////////////////////////////Need to add markers into select//////////////////////////////////
 
 myPlaces = [
-              {name: "Walmart Neighborhood Market",lat:41.2626004,lon:-95.9811922},
-              {name: "Hy-Vee: Broadway",lat:41.261463,lon:-95.879364},
-              {name: "ALDI: N 30th",lat:41.3024318,lon:-95.9559953},
-              {name: "Family Dollar: S 24th",lat:41.2512087,lon:-95.94750669999999},
-              {name: "ALDI: S 72nd",lat:41.2520613,lon:-96.0222567},
-              {name: "Family Dollar: 16th",lat:41.21445370000001,lon:-95.95798689999999},
-              {name: "Family Dollar: N 24th",lat:41.2831746,lon:-95.9370907},
-              {name: "Hy-Vee: Cass",lat:41.265507,lon:-96.03931999999999},
-              {name: "Trader Joe's",lat:41.2482854,lon:-96.0739732}
+              {name: "Walmart Neighborhood Market",lat:41.2626004,lon:-95.9811922,category: 1},
+              {name: "Hy-Vee: Broadway",lat:41.261463,lon:-95.879364,category: 2},
+              {name: "ALDI: N 30th",lat:41.3024318,lon:-95.9559953,category: 3},
+              {name: "Family Dollar: S 24th",lat:41.2512087,lon:-95.94750669999999,category: 4},
+              {name: "ALDI: S 72nd",lat:41.2520613,lon:-96.0222567,category: 5},
+              {name: "Family Dollar: 16th",lat:41.21445370000001,lon:-95.95798689999999,category: 6},
+              {name: "Family Dollar: N 24th",lat:41.2831746,lon:-95.9370907,category: 7},
+              {name: "Hy-Vee: Cass",lat:41.265507,lon:-96.03931999999999,category: 8},
+              {name: "Trader Joe's",lat:41.2482854,lon:-96.0739732,category: 9}
             ]
-///////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
 var marker
 var infowindow
 var currentLat, currentLong
@@ -137,20 +128,41 @@ function gotLocation(location, lat, long) {
     marker1 = gmLocations.setMarker({
         label: point1,
         title: "My Location"    // hover by balloon tip tooltip name
-    })
-
+        })
+  const infowindow = new google.maps.InfoWindow({
+    content: "My Location"
+  })     
+ marker1.addListener("click", () => {
+    infowindow.open(gmLocations, marker1);
+  });
+}
+    
+    
+drpLocation.onclick = function handleSelected(s){
 //loop of myPlaces to put markers on
     let tempPoint = ""
     let tempMarker = ""
     for (i = 0; i < myPlaces.length;i++) {
-      tempPoint = new google.maps.LatLng(myPlaces[i].lat,myPlaces[i].lon)
+        if (typeof(s) == "object")  {
+            return
+       } else {
+        //if ((typeof marker.s == "object" && marker.s.indexof(s) >= 0) || myPlaces.length == 0)
+           tempPoint = new google.maps.LatLng(myPlaces[i].lat,myPlaces[i].lon)
       tempMarker = gmLocations.setMarker({
         position: tempPoint,
-        //label: myPlaces[i].name
-      })
-    }
+        title: myPlaces[i].name
+       }) 
+    const infowindow = new google.maps.InfoWindow({
+    content: myPlaces[i].name
+  })     
+ tempMarker.addListener("click", () => {
+    infowindow.open(gmLocations, tempMarker);
+  });
+        
 }
-
+      }  
+    }
+    
 
 btnCL4.onclick = function() {
     // have to run this before you do anything else - call this getLocation button
@@ -160,41 +172,16 @@ btnCL4.onclick = function() {
 
 
 
-/*
-selLoc.onclick = function(name) {
-let tempPoint = ""
-let tempMarker = ""
-    for (i = 0; i < myPlaces.length;i++) {
-      tempPoint = new google.maps.LatLng(myPlaces[i].lat,myPlaces[i].lon)
-      tempMarker = gmLocations.setMarker({
-        position: tempPoint,
-        //label: myPlaces[i].name
 
-marker = myPlaces[i].name
-if (marker.name == myPlaces[i].name || myPlaces.length == 0) {
-    marker.setVisible(true)
-   }else{
-    marker.setVisible(false)
-    }
-    }
-    */
- 
+
+
+
 
 btnBackMenu.onclick=function(){
   ChangeForm(menu)
 }
 ////////////////////////////////////////////////////////
-  /*
-  // ======= This function handles selections from the select box ====
-      // === If the dummy entry is selected, the info window is closed ==
-      function handleSelected(opt) {
-        var i = opt.selectedIndex - 1; 
-        if (i > -1) {
-          GEvent.trigger(gmarkers[i],"click");
-        }
-        else {
-          map.closeInfoWindow();
-        }
-      }
-*/
 
+btnClear.onclick=function(){
+  gmLocations.refresh()
+}

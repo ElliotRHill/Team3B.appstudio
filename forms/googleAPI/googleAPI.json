@@ -52,25 +52,25 @@
         "forms",
         "googleAPI",
         "Elements",
-        "btnFavLoc.json"
-      ]
-    },
-    {
-      "!type": "External",
-      "file": [
-        "forms",
-        "googleAPI",
-        "Elements",
-        "selLoc.json"
-      ]
-    },
-    {
-      "!type": "External",
-      "file": [
-        "forms",
-        "googleAPI",
-        "Elements",
         "btnBackMenu.json"
+      ]
+    },
+    {
+      "!type": "External",
+      "file": [
+        "forms",
+        "googleAPI",
+        "Elements",
+        "drpLocation.json"
+      ]
+    },
+    {
+      "!type": "External",
+      "file": [
+        "forms",
+        "googleAPI",
+        "Elements",
+        "btnClear.json"
       ]
     }
   ],
