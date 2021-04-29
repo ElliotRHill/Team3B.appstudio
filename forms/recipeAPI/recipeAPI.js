@@ -1,3 +1,4 @@
+
 // 1. *** use your own url copied from Postman ****
 requestURL = "https://traderjoeapi.jackgisel.com/api/recipes"
 function onXHRLoad() {
@@ -21,6 +22,7 @@ function callAPI(URL) {
    // xhttp.open(‘GET’, ‘https://cors.bridged.cc/’ + requestURL)
     // if you DON’T need cors use this code:
     xhttp.open('GET',URL)
+    
     /* Headers */
     // if you need to set the returned data type, use this line of code:
     //xhttp.setRequestHeader(‘Content-Type’, ‘application/json’)
@@ -36,6 +38,7 @@ function callAPI(URL) {
     xhttp.setRequestHeader(‘rankby’,‘distance’)
     xhttp.setRequestHeader(‘type’,‘restaurant’)
     */
+    
     // make the API request
     xhttp.addEventListener('load', onXHRLoad)
     xhttp.send()
@@ -51,30 +54,5 @@ recipeAPI.onshow=function(){
   alrtList.value = "Add these ingredients to your list!"
 }
 
-  hbgrPageRecipeYourList.onclick=function(s){
-    if (typeof(s) == "object") {
-       return
-    } else {
-       switch(s) {
-        case "Home":
-            ChangeForm(yourLists)
-            break;
-        case "View Lists":
-            ChangeForm(yourLists)
-            break;
-        case "Add to Current List":
-            ChangeForm(newList)
-            break;            
-        case "Nearby Stores":
-            ChangeForm(googleAPI)
-            break;
-        case "Weather":
-            ChangeForm(weather)
-            break;
-        case "Coupons":
-            ChangeForm(coupons)
-            break;
-        }
-    }  
-}
+
 

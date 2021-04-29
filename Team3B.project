@@ -66,6 +66,14 @@
             "yourLists",
             "yourLists.json"
           ]
+        },
+        {
+          "!type": "External",
+          "file": [
+            "forms",
+            "recipeAPI",
+            "recipeAPI.json"
+          ]
         }
       ],
       "configxml": null,
@@ -132,7 +140,7 @@
       "useStrict": "",
       "version": "1.0.0",
       "viewportFit": "cover",
-      "voltAppId": "o6CDea",
+      "voltAppId": "",
       "voltDomain": ""
     }
   ],
