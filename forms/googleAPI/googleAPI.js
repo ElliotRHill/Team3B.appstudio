@@ -91,7 +91,7 @@ googleAPI.onshow=function(){
 
 
 
-////////////////////////////////////////////Need to add markers into select//////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////
 
 myPlaces = [
               {name: "Walmart Neighborhood Market",lat:41.2626004,lon:-95.9811922,category: 1},
@@ -124,6 +124,7 @@ function gotLocation(location, lat, long) {
     gmLocations.refresh()
 
     //Put a marker on our location
+     
     point1 = new google.maps.LatLng(location.coords.latitude, location.coords.longitude)
     marker1 = gmLocations.setMarker({
         label: point1,
@@ -149,7 +150,7 @@ drpLocation.onclick = function(s){
        if (typeof(s) == "object")  {
             return
       
-      } else if (tempPoint == myPlaces[i].lat && myPlaces[i].lon){
+      } else if (drpLocation.selection == myPlaces[i].name){
          
            tempPoint = new google.maps.LatLng(myPlaces[i].lat,myPlaces[i].lon)
       tempMarker = gmLocations.setMarker({
@@ -186,7 +187,7 @@ btnCL4.onclick = function() {
 btnBackMenu.onclick=function(){
   ChangeForm(menu)
 }
-////////////////////////////////////////////////////////
+
 
 btnClear.onclick=function(){
   gmLocations.refresh()
