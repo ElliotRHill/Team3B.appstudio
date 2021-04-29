@@ -137,24 +137,30 @@ function gotLocation(location, lat, long) {
   });
 }
     
+    //Dropdown to choose location
     
-drpLocation.onclick = function handleSelected(s){
+drpLocation.onclick = function(s){
 //loop of myPlaces to put markers on
     let tempPoint = ""
     let tempMarker = ""
-    for (i = 0; i < myPlaces.length;i++) {
-        if (typeof(s) == "object")  {
+   
+   for (i = 0; i < myPlaces.length;i++) {
+       
+       if (typeof(s) == "object")  {
             return
-       } else {
-        //if ((typeof marker.s == "object" && marker.s.indexof(s) >= 0) || myPlaces.length == 0)
+      
+      } else if (tempPoint == myPlaces[i].lat && myPlaces[i].lon){
+         
            tempPoint = new google.maps.LatLng(myPlaces[i].lat,myPlaces[i].lon)
       tempMarker = gmLocations.setMarker({
         position: tempPoint,
         title: myPlaces[i].name
-       }) 
+     }) 
+    
     const infowindow = new google.maps.InfoWindow({
     content: myPlaces[i].name
   })     
+ 
  tempMarker.addListener("click", () => {
     infowindow.open(gmLocations, tempMarker);
   });
