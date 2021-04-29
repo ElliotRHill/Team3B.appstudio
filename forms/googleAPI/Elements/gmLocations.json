@@ -21,7 +21,7 @@
   "id": "gmLocations",
   "keyboardShortcuts": true,
   "latitude": 40.948262,
-  "left": 12,
+  "left": 10,
   "longitude": -72.898428,
   "mapMaker": false,
   "mapTypeId": "hybrid",
@@ -43,7 +43,7 @@
   "streetViewControl": true,
   "style": "",
   "tilt": 0,
-  "top": 7,
+  "top": 58,
   "width": 300,
   "zoom": 10,
   "zoomControl": true
