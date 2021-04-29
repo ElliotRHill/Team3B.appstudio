@@ -29,7 +29,7 @@
   "icon": "",
   "iconTitle": "",
   "id": "btnBackMenu",
-  "left": 228,
+  "left": 233,
   "mAll": "",
   "mBottom": "",
   "mLeft": "",
@@ -61,6 +61,6 @@
   "style": "",
   "toggleControl": "",
   "top": 339,
-  "value": "4. Menu",
+  "value": "Menu",
   "width": 85
 }

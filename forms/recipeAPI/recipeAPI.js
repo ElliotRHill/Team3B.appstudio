@@ -1,6 +1,6 @@
-/*
+
 // 1. *** use your own url copied from Postman ****
-requestURL2 = "https://traderjoeapi.jackgisel.com/api/recipes"
+let requestURL = "https://traderjoeapi.jackgisel.com/api/recipes"
 function onXHRLoad() {
     let message = ""
     // ‘this’ is another name for the object returned from the API call
@@ -22,7 +22,7 @@ function callAPI(URL) {
    // xhttp.open(‘GET’, ‘https://cors.bridged.cc/’ + requestURL)
     // if you DON’T need cors use this code:
     xhttp.open('GET',URL)
-    */
+    
     /* Headers */
     // if you need to set the returned data type, use this line of code:
     //xhttp.setRequestHeader(‘Content-Type’, ‘application/json’)
@@ -38,7 +38,7 @@ function callAPI(URL) {
     xhttp.setRequestHeader(‘rankby’,‘distance’)
     xhttp.setRequestHeader(‘type’,‘restaurant’)
     */
-    /*
+    
     // make the API request
     xhttp.addEventListener('load', onXHRLoad)
     xhttp.send()
@@ -46,13 +46,13 @@ function callAPI(URL) {
 // 3. *** add a new button onclick event and put the callAPI code into it ***
 btnIngredients.onclick=function(){
       // call the code that will make the API call, then process what comes back
-    callAPI(requestURL2)
+    callAPI(requestURL)
 }
-*/
-/*
+
+
 recipeAPI.onshow=function(){
   alrtList.value = "Add these ingredients to your list!"
 }
-*/
+
 
 

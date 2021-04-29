@@ -29,7 +29,7 @@
   "icon": "",
   "iconTitle": "",
   "id": "btnClear",
-  "left": 243,
+  "left": 244,
   "mAll": "",
   "mBottom": "",
   "mLeft": "",
@@ -60,7 +60,7 @@
   "size": " btn-md",
   "style": "",
   "toggleControl": "",
-  "top": 246,
+  "top": 247,
   "value": "Clear",
-  "width": "auto"
+  "width": 68
 }

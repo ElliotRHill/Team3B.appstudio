@@ -13,6 +13,7 @@
   "draggable": true,
   "draggableCursor": "",
   "draggingCursor": "",
+  "events": "onresize",
   "expanded_pmp": null,
   "heading": 0,
   "height": 240,
@@ -32,7 +33,7 @@
   "onmousemove": "",
   "onmouseout": "",
   "onmouseup": "",
-  "onresize": "",
+  "onresize": "gmLocations.onresize()",
   "ontouchend": "",
   "ontouchmove": "",
   "ontouchstart": "",
@@ -44,6 +45,6 @@
   "tilt": 0,
   "top": 7,
   "width": 300,
-  "zoom": 16,
+  "zoom": 10,
   "zoomControl": true
 }

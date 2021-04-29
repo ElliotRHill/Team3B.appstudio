@@ -9,32 +9,42 @@ lon = [-95.9811922, -95.879364, -95.9559953, -95.94750669999999, -96.0222567, -9
 
 //API call
 // 1. *** use your own url copied from Postman ****
-let requestURL = "https://maps.googleapis.com/maps/api/place/textsearch/json?query=grocery store &key=AIzaSyDoaVtASvuYckCYDer224otaiYRZApFXiw&location=41.265331,-95.949364&radius=1000&type=grocery_or_supermarket"
+let requestURL2 = "https://maps.googleapis.com/maps/api/place/textsearch/json?query=grocery store &key=AIzaSyDoaVtASvuYckCYDer224otaiYRZApFXiw&location=41.265331,-95.949364&radius=1000&type=grocery_or_supermarket"
+var Groc= []
+let apiData2 = ""
+let message2 = ""
 
-function onXHRLoad() {
-    let message = ""
+function onXHRLoad2() {
+    let message2 = ""
     
     // 'this' is another name for the object returned from the API call
-    let apiData = JSON.parse(this.responseText)
+    let apiData2 = JSON.parse(this.responseText)
     
-    for (i = 0; i <= apiData.results.length - 1; i++) {
-        console.log(`${apiData.results[i].formatted_address}`)
-        message = message + apiData.results[i].formatted_address + "\n" + apiData.results[i].name + "\n" + "\n" 
+    for (i = 0; i <= apiData2.results.length - 1; i++) {
+     Groc[i] = {  
+       "description": apiData2.results[i].name,
+       "lat":apiData2.results[i].lat,
+       "lng":apiData2.results[i].lng,
+       "address":apiData2.results[i].formatted_address
+       }
+       console.log(`${apiData2.results[i].formatted_address}`)
+        message2 = message2 + apiData2.results[i].formatted_address + "\n" + apiData2.results[i].name + "\n" + "\n" 
     }
     
+    
     // 2. *** put your textarea control name here ****
-    txtaLocation.value = message
+    txtaLocation.value = message2
     
     // if want to add to database call a function here that does that
     // addToDatabase()
 }
 
-function callAPI(URL) {
+function callAPI2(URL) {
     var xhttp = new XMLHttpRequest();
     
     // if you need cors (you'll get a cors error if you don't have it and you need it)
     // use this code to add the cors code to your url 
-    xhttp.open('GET', 'https://cors.bridged.cc/' + requestURL)
+    xhttp.open('GET', 'https://cors.bridged.cc/' + requestURL2)
     
     // if you DON'T need cors use this code:
     //xhttp.open('GET',URL)
@@ -60,7 +70,7 @@ function callAPI(URL) {
     */
 
     // make the API request
-    xhttp.addEventListener('load', onXHRLoad)
+    xhttp.addEventListener('load', onXHRLoad2)
     xhttp.send()
 }
 
@@ -69,7 +79,7 @@ function callAPI(URL) {
 
 btnLocation.onclick=function(){
    // call the code that will make the API call, then process what comes back
-    callAPI(requestURL)
+    callAPI2(requestURL2)
 }
 
 
@@ -81,6 +91,7 @@ googleAPI.onshow=function(){
     // put array of flavors in the dropdown (called populating it)
     for (i = 0; i < myPlaces.length; i++) 
         drpLocation.addItem(myPlaces[i].name)
+        
 }
  
 
@@ -135,15 +146,18 @@ function gotLocation(location, lat, long) {
   })     
  marker1.addListener("click", () => {
     infowindow.open(gmLocations, marker1);
-  });
+  })
+  
+  
 }
     
     //Dropdown to choose location
-    
+  
+ 
 drpLocation.onclick = function(s){
 //loop of myPlaces to put markers on
-    let tempPoint = ""
-    let tempMarker = ""
+   let tempPoint = ""
+    let tempMarker = ""  
    
    for (i = 0; i < myPlaces.length;i++) {
        
@@ -167,20 +181,18 @@ drpLocation.onclick = function(s){
   });
         
 }
-      }  
+}  
     }
-    
+
+   
+   
+   
 
 btnCL4.onclick = function() {
     // have to run this before you do anything else - call this getLocation button
     navigator.geolocation.getCurrentPosition(gotLocation)
     NSB.WaitCursor(true)
 }
-
-
-
-
-
 
 
 
@@ -192,3 +204,11 @@ btnBackMenu.onclick=function(){
 btnClear.onclick=function(){
   gmLocations.refresh()
 }
+
+
+
+  
+
+          
+
+
