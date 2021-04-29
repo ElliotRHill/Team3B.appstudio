@@ -105,20 +105,17 @@ googleAPI.onshow=function(){
 /////////////////////////////////////////////////////////////////////////////
 
 myPlaces = [
-              {name: "Walmart Neighborhood Market",lat:41.2626004,lon:-95.9811922,category: 1},
-              {name: "Hy-Vee: Broadway",lat:41.261463,lon:-95.879364,category: 2},
-              {name: "ALDI: N 30th",lat:41.3024318,lon:-95.9559953,category: 3},
-              {name: "Family Dollar: S 24th",lat:41.2512087,lon:-95.94750669999999,category: 4},
-              {name: "ALDI: S 72nd",lat:41.2520613,lon:-96.0222567,category: 5},
-              {name: "Family Dollar: 16th",lat:41.21445370000001,lon:-95.95798689999999,category: 6},
-              {name: "Family Dollar: N 24th",lat:41.2831746,lon:-95.9370907,category: 7},
-              {name: "Hy-Vee: Cass",lat:41.265507,lon:-96.03931999999999,category: 8},
-              {name: "Trader Joe's",lat:41.2482854,lon:-96.0739732,category: 9}
+              {name: "Walmart Neighborhood Market: 360 Saddle Creek Rd",lat:41.2626004,lon:-95.9811922,category: 1},
+              {name: "Hy-Vee: 2323 W Broadway, Council Bluffs",lat:41.261463,lon:-95.879364,category: 2},
+              {name: "ALDI: 4801 N 30th St",lat:41.3024318,lon:-95.9559953,category: 3},
+              {name: "Family Dollar: 834 S 24th St",lat:41.2512087,lon:-95.94750669999999,category: 4},
+              {name: "ALDI: 885 S 72nd St",lat:41.2520613,lon:-96.0222567,category: 5},
+              {name: "Family Dollar: 2601 N 16th St",lat:41.21445370000001,lon:-95.95798689999999,category: 6},
+              {name: "Family Dollar: 1500 N 24th St",lat:41.2831746,lon:-95.9370907,category: 7},
+              {name: "Hy-Vee: 7910 Cass St",lat:41.265507,lon:-96.03931999999999,category: 8},
+              {name: "Trader Joe's: 10305 Pacific St",lat:41.2482854,lon:-96.0739732,category: 9,}
             ]
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-
-
 
 var marker
 var infowindow
@@ -205,10 +202,5 @@ btnClear.onclick=function(){
   gmLocations.refresh()
 }
 
-
-
-  
-
-          
 
 
