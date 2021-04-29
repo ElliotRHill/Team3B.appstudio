@@ -30,7 +30,7 @@
   "icon": "menu",
   "iconTitle": "",
   "id": "hmbMenu",
-  "items": "!Click to Change Pages\nYour lists\nCreate new list\nFind Store\nWeather\nCoupons ",
+  "items": "Home\nView Lists\nAdd to Current List\nNearby Stores\nRandom Recipe\nWeather",
   "left": 39,
   "mAll": "",
   "mBottom": "",

@@ -193,8 +193,8 @@ hmbrPageNavNewList.onclick=function(s){
         case "Weather":
             ChangeForm(weather)
             break;
-        case "Coupons":
-            ChangeForm(coupons)
+        case "Random Recipe":
+            ChangeForm(recipeApi)
             break;
         }
     }    

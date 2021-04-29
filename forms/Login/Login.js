@@ -1,6 +1,6 @@
-let req = ''
+let req = {}
 let query = ''
-let results = ''
+let results = []
 let pw = 'Speedyrwb645'  // ***** put your database password here
 let netID = 'rwb12128'
 let databaseSchema = "375groupb3"  // group schema
@@ -60,7 +60,7 @@ btnLogin.onclick=function(){
       
     if ((checkUser && checkPW == 1) && (userIndex == passwordIndex)) {
       console.log('user and pw are in db')
-      ChangeForm(menu)
+      ChangeForm(yourLists)
     } else {
       console.log('the user and pw do not match')
     }
