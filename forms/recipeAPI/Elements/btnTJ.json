@@ -24,12 +24,12 @@
   "fontWeight": "",
   "groupStyle": "",
   "grouping": "",
-  "height": 34,
+  "height": "auto",
   "hidden": "",
   "icon": "",
   "iconTitle": "",
-  "id": "btnCL4",
-  "left": 13,
+  "id": "btnTJ",
+  "left": 234,
   "mAll": "",
   "mBottom": "",
   "mLeft": "",
@@ -60,7 +60,7 @@
   "size": " btn-md",
   "style": "",
   "toggleControl": "",
-  "top": 297,
-  "value": "My Location",
-  "width": 124
+  "top": 401,
+  "value": "Add",
+  "width": "auto"
 }

@@ -21,10 +21,10 @@
   "fontStyle": "",
   "fontWeight": "",
   "header": "Here is the header. ",
-  "height": 74,
+  "height": 61,
   "hidden": "",
   "id": "alrtList",
-  "left": 121,
+  "left": 96,
   "mAll": "",
   "mBottom": "",
   "mLeft": "",
@@ -48,7 +48,7 @@
   "script": "",
   "style": "",
   "text": "Alert",
-  "top": 278,
+  "top": 9,
   "value": "",
   "width": "auto"
 }

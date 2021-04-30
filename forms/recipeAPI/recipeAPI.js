@@ -1,21 +1,21 @@
 
 // 1. *** use your own url copied from Postman ****
-let requestURL = "https://traderjoeapi.jackgisel.com/api/recipes"
-function onXHRLoad() {
-    let message = ""
+let requestURL5 = "https://traderjoeapi.jackgisel.com/api/recipes"
+function onXHRLoad5() {
+    let message5 = ""
     // ‘this’ is another name for the object returned from the API call
-    let apiData = JSON.parse(this.responseText)
-    for (i = 0; i <= apiData[2].ingredients.length - 1; i++) {
-        console.log(`${apiData[2].ingredients[i]}`)
-        message = message + apiData[2].ingredients[i] + "\n"
+    let apiData5 = JSON.parse(this.responseText)
+    for (i = 0; i <= apiData5[2].ingredients.length - 1; i++) {
+        console.log(`${apiData5[2].ingredients[i]}`)
+        message5 = message5 + apiData5[2].ingredients[i] + "\n" + "\n"
     }
  //   console.log(pm.response.json()[2].ingredients)
     // 2. *** put your textarea control name here ****
-    txtaIngredients.value = message
+    txtaIngredients.value = message5
     // if want to add to database call a function here that does that
     // addToDatabase()
 }
-function callAPI(URL) {
+function callAPI5(URL) {
     var xhttp = new XMLHttpRequest();
     // if you need cors (you’ll get a cors error if you don’t have it and you need it)
     // use this code to add the cors code to your url
@@ -40,13 +40,13 @@ function callAPI(URL) {
     */
     
     // make the API request
-    xhttp.addEventListener('load', onXHRLoad)
+    xhttp.addEventListener('load', onXHRLoad5)
     xhttp.send()
 }
 // 3. *** add a new button onclick event and put the callAPI code into it ***
 btnIngredients.onclick=function(){
       // call the code that will make the API call, then process what comes back
-    callAPI(requestURL)
+    callAPI5(requestURL5)
 }
 
 
@@ -55,4 +55,55 @@ recipeAPI.onshow=function(){
 }
 
 
+
+
+btnTJ.onclick=function(){
+productID = 120
+name = inptTJ.value
+    price = inptType.value
+    store_id = 3
+    query = "INSERT INTO products (`product_id`, `product_name`,`price`,`store_id`) VALUES ('" + productID + "','" + name + "', '" + price + "', '" + store_id + "')"
+    // look at how the query is rendered
+    alert(query)
+    
+    // replace my netID with yours (2 places)
+    req = Ajax("https://ormond.creighton.edu/courses/375/ajax-connection.php", "POST", "host=ormond.creighton.edu&user=" + netID + "&pass=" + pw + "&database=" + schema + "&query=" + query)
+    if (req.status == 200) {
+        if (req.responseText == 500)    // for our server - this means the insert succeeded
+            console.log("You have successfully added the ingredient!")
+        else
+             console.log("There was a problem with adding the ingredient to the database.")
+    } else 
+        // transit error
+        console.log("Error: " + req.status)
+}
+
+
+
+hbgrPageRecipeYourList.onclick=function(s){
+  if (typeof(s) == "object") {
+       return
+    } else {
+       switch(s) {
+        case "Home":
+            ChangeForm(yourLists)
+            break;
+        case "View Lists":
+            ChangeForm(yourLists)
+            break;
+        case "Add to Current List":
+            ChangeForm(newList)
+            break;            
+        case "Nearby Stores":
+            ChangeForm(googleAPI)
+            break;
+        case "Weather":
+            ChangeForm(weather)
+            break;
+        case "Recipe":
+            ChangeForm(recipeAPI)
+            break;
+        }
+    }  
+}
 

@@ -45,6 +45,33 @@
         "Elements",
         "hbgrPageRecipeYourList.json"
       ]
+    },
+    {
+      "!type": "External",
+      "file": [
+        "forms",
+        "recipeAPI",
+        "Elements",
+        "inptTJ.json"
+      ]
+    },
+    {
+      "!type": "External",
+      "file": [
+        "forms",
+        "recipeAPI",
+        "Elements",
+        "btnTJ.json"
+      ]
+    },
+    {
+      "!type": "External",
+      "file": [
+        "forms",
+        "recipeAPI",
+        "Elements",
+        "inptType.json"
+      ]
     }
   ],
   "class": "",
