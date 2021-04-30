@@ -79,3 +79,31 @@ name = inptTJ.value
 }
 
 
+
+hbgrPageRecipeYourList.onclick=function(s){
+  if (typeof(s) == "object") {
+       return
+    } else {
+       switch(s) {
+        case "Home":
+            ChangeForm(yourLists)
+            break;
+        case "View Lists":
+            ChangeForm(yourLists)
+            break;
+        case "Add to Current List":
+            ChangeForm(newList)
+            break;            
+        case "Nearby Stores":
+            ChangeForm(googleAPI)
+            break;
+        case "Weather":
+            ChangeForm(weather)
+            break;
+        case "Recipe":
+            ChangeForm(recipeAPI)
+            break;
+        }
+    }  
+}
+
