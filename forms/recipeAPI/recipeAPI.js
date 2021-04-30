@@ -51,7 +51,7 @@ btnIngredients.onclick=function(){
 
 
 recipeAPI.onshow=function(){
-  alrtList.value = "Add these ingredients to your list!"
+  alrtList.value = "Make this Strwaberry Ice Box Cake"
 }
 
 
