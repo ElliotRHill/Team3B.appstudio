@@ -37,7 +37,7 @@
   "mLeft": "",
   "mRight": "",
   "mTop": "",
-  "onclick": "hbgrPageNav.onclick()",
+  "onclick": "hbgrPageNavYourList.onclick()",
   "onmousedown": "",
   "onmousemove": "",
   "onmouseout": "",

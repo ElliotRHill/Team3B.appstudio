@@ -43,7 +43,34 @@
         "forms",
         "recipeAPI",
         "Elements",
-        "hmbMenuCopy.json"
+        "hbgrPageRecipeYourList.json"
+      ]
+    },
+    {
+      "!type": "External",
+      "file": [
+        "forms",
+        "recipeAPI",
+        "Elements",
+        "inptTJ.json"
+      ]
+    },
+    {
+      "!type": "External",
+      "file": [
+        "forms",
+        "recipeAPI",
+        "Elements",
+        "btnTJ.json"
+      ]
+    },
+    {
+      "!type": "External",
+      "file": [
+        "forms",
+        "recipeAPI",
+        "Elements",
+        "inptType.json"
       ]
     }
   ],

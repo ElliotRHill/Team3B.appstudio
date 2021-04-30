@@ -29,7 +29,7 @@
   "icon": "",
   "iconTitle": "",
   "id": "btnCL4",
-  "left": 3,
+  "left": 13,
   "mAll": "",
   "mBottom": "",
   "mLeft": "",
@@ -60,7 +60,7 @@
   "size": " btn-md",
   "style": "",
   "toggleControl": "",
-  "top": 254,
-  "value": "3. Map",
-  "width": 79
+  "top": 296,
+  "value": "My Location",
+  "width": 124
 }

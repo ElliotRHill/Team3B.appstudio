@@ -52,7 +52,7 @@
         "forms",
         "googleAPI",
         "Elements",
-        "btnFavLoc.json"
+        "drpLocation.json"
       ]
     },
     {
@@ -61,7 +61,7 @@
         "forms",
         "googleAPI",
         "Elements",
-        "selLoc.json"
+        "btnClear.json"
       ]
     },
     {
@@ -70,7 +70,16 @@
         "forms",
         "googleAPI",
         "Elements",
-        "btnBackMenu.json"
+        "hmbMenu3.json"
+      ]
+    },
+    {
+      "!type": "External",
+      "file": [
+        "forms",
+        "googleAPI",
+        "Elements",
+        "alrtFind.json"
       ]
     }
   ],
