@@ -51,18 +51,19 @@ btnIngredients.onclick=function(){
 
 
 recipeAPI.onshow=function(){
-  alrtList.value = "Make this Strwaberry Ice Box Cake"
+  alrtList.value = "Make this Strawberry Ice Box Cake"
 }
 
 
 
 
 btnTJ.onclick=function(){
-productID = 120
+
+
 name = inptTJ.value
     price = inptType.value
     store_id = 3
-    query = "INSERT INTO products (`product_id`, `product_name`,`price`,`store_id`) VALUES ('" + productID + "','" + name + "', '" + price + "', '" + store_id + "')"
+    query = "INSERT INTO products (`product_name`,`price`,`store_id`) VALUES ('" + name + "', '" + price + "', '" + store_id + "')"
     // look at how the query is rendered
     alert(query)
     
@@ -106,4 +107,6 @@ hbgrPageRecipeYourList.onclick=function(s){
         }
     }  
 }
+
+
 
