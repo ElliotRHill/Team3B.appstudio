@@ -58,15 +58,16 @@ recipeAPI.onshow=function(){
 
 
 btnTJ.onclick=function(){
-name = inptTJ.value
-    price = inptType.value
-    store_id = 3
-    query = "INSERT INTO products (`product_name`,`price`,`store_id`) VALUES (''" + name + "', '" + price + "', '" + store_id + "')"
+
+Name = inptTJ.value
+    Price = inptType.value
+    Store_id = 3
+    query = "INSERT INTO products (`product_name`,`price`,`store_id`) VALUES ('" + Name + "', '" + Price + "', '" + Store_id + "')"
     // look at how the query is rendered
     alert(query)
     
     // replace my netID with yours (2 places)
-    req = Ajax("https://ormond.creighton.edu/courses/375/ajax-connection.php", "POST", "host=ormond.creighton.edu&user=" + netID + "&pass=" + pw + "&database=" + schema + "&query=" + query)
+     req = Ajax("https://ormond.creighton.edu/courses/375/ajax-connection.php", "POST", "host=ormond.creighton.edu&user=" + netID + "&pass=" + pw + "&database=" + schema + "&query=" + query)
     if (req.status == 200) {
         if (req.responseText == 500)    // for our server - this means the insert succeeded
             console.log("You have successfully added the ingredient!")
@@ -106,6 +107,8 @@ hbgrPageRecipeYourList.onclick=function(s){
     }  
 }
 
+
+
 let requestURL6 = "https://traderjoeapi.jackgisel.com/api/recipes"
 
 function onXHRLoad6() {
@@ -134,7 +137,7 @@ function callAPI6(URL) {
     // if you DON’T need cors use this code:
     xhttp.open('GET',URL)
     
-    /* Headers */
+    //Headers 
     // if you need to set the returned data type, use this line of code:
     //xhttp.setRequestHeader(‘Content-Type’, ‘application/json’)
     // if you need authorization token (stored in myToken) use this line of code:
@@ -143,12 +146,12 @@ function callAPI6(URL) {
     // examples (think of headers as parameters)
     // or just use the Postman url which has all the parameters already added like I did here.
     // Here are headers you might need:
-    /*
-    xhttp.setRequestHeader(‘key’,‘AIzaSyCE-pjULPU_Gp5Qf0qL39tVsdJBX55J0cY’)
-    xhttp.setRequestHeader(‘location’,‘41.276900,-95.942310’)
-    xhttp.setRequestHeader(‘rankby’,‘distance’)
-    xhttp.setRequestHeader(‘type’,‘restaurant’)
-    */
+    
+    //xhttp.setRequestHeader(‘key’,‘AIzaSyCE-pjULPU_Gp5Qf0qL39tVsdJBX55J0cY’)
+    //xhttp.setRequestHeader(‘location’,‘41.276900,-95.942310’)
+   // xhttp.setRequestHeader(‘rankby’,‘distance’)
+  //  xhttp.setRequestHeader(‘type’,‘restaurant’)
+    
     
     // make the API request
     xhttp.addEventListener('load', onXHRLoad6)
@@ -160,3 +163,4 @@ btnIngredients.onclick=function(){
     callAPI6(requestURL6)
     callAPI5(requestURL5)
 }
+
