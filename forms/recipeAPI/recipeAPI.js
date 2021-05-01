@@ -50,9 +50,7 @@ btnIngredients.onclick=function(){
 }
 
 
-recipeAPI.onshow=function(){
-  alrtList.value = "Add these ingredients to your list!"
-}
+
 
 
 
@@ -64,13 +62,13 @@ Name = inptTJ.value
     Store_id = 3
     query = "INSERT INTO products (`product_name`,`price`,`store_id`) VALUES ('" + Name + "', '" + Price + "', '" + Store_id + "')"
     // look at how the query is rendered
-    alert(query)
+    //alert(query)
     
     // replace my netID with yours (2 places)
      req = Ajax("https://ormond.creighton.edu/courses/375/ajax-connection.php", "POST", "host=ormond.creighton.edu&user=" + netID + "&pass=" + pw + "&database=" + schema + "&query=" + query)
     if (req.status == 200) {
         if (req.responseText == 500)    // for our server - this means the insert succeeded
-            console.log("You have successfully added the ingredient!")
+            lblList.value = "Now add the products to your list!"
         else
              console.log("There was a problem with adding the ingredient to the database.")
     } else 

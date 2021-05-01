@@ -34,15 +34,6 @@
         "forms",
         "recipeAPI",
         "Elements",
-        "alrtList.json"
-      ]
-    },
-    {
-      "!type": "External",
-      "file": [
-        "forms",
-        "recipeAPI",
-        "Elements",
         "hbgrPageRecipeYourList.json"
       ]
     },
@@ -80,6 +71,15 @@
         "recipeAPI",
         "Elements",
         "lblTitle.json"
+      ]
+    },
+    {
+      "!type": "External",
+      "file": [
+        "forms",
+        "recipeAPI",
+        "Elements",
+        "lblList.json"
       ]
     }
   ],
