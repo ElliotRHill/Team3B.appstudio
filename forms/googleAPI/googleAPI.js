@@ -147,7 +147,7 @@ function gotLocation(location, lat, long) {
   
   
 }
-    
+  
     //Dropdown to choose location
   
  
@@ -157,9 +157,9 @@ drpLocation.onclick = function(s){
     let tempMarker = ""  
    
    for (i = 0; i < myPlaces.length;i++) {
+        if (typeof(s) == "object") {
        
-       if (typeof(s) == "object")  {
-            return
+       return
       
       } else if (drpLocation.selection == myPlaces[i].name){
          
