@@ -29,7 +29,7 @@
   "icon": "",
   "iconTitle": "",
   "id": "btnIngredients",
-  "left": 10,
+  "left": 8,
   "mAll": "",
   "mBottom": "",
   "mLeft": "",
@@ -60,7 +60,7 @@
   "size": " btn-md",
   "style": "",
   "toggleControl": "",
-  "top": 140,
+  "top": 90,
   "value": "Recipe of the Month",
   "width": "auto"
 }
