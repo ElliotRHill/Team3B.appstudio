@@ -29,13 +29,13 @@
   "icon": "",
   "iconTitle": "",
   "id": "btnBackMenu",
-  "left": 232,
+  "left": "225",
   "mAll": "",
   "mBottom": "",
   "mLeft": "",
   "mRight": "",
   "mTop": "",
-  "onclick": "Button1.onclick()",
+  "onclick": "btnBackMenu.onclick()",
   "onmousedown": "",
   "onmousemove": "",
   "onmouseout": "",
@@ -61,6 +61,6 @@
   "style": "",
   "toggleControl": "",
   "top": 351,
-  "value": "4. Menu",
-  "width": 85
+  "value": "4. Home",
+  "width": "90"
 }
