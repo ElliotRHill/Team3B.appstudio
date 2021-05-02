@@ -24,12 +24,12 @@
   "fontWeight": "",
   "groupStyle": "",
   "grouping": "",
-  "height": 36,
+  "height": 33,
   "hidden": "",
   "icon": "",
   "iconTitle": "",
   "id": "btnLocation",
-  "left": 12,
+  "left": 5,
   "mAll": "",
   "mBottom": "",
   "mLeft": "",
@@ -60,7 +60,7 @@
   "size": " btn-md",
   "style": "",
   "toggleControl": "",
-  "top": 340,
-  "value": "Nearby Stores",
-  "width": 138
+  "top": 353,
+  "value": "1. Nearby",
+  "width": 99
 }
