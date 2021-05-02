@@ -66,6 +66,14 @@
             "createAccount",
             "createAccount.json"
           ]
+        },
+        {
+          "!type": "External",
+          "file": [
+            "forms",
+            "recipeApi",
+            "recipeApi.json"
+          ]
         }
       ],
       "configxml": null,
