@@ -193,10 +193,6 @@ btnCL4.onclick = function() {
 
 
 
-
-
-btnClear.onclick=function(){
-  gmLocations.refresh()
 }
 
 
