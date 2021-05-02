@@ -74,6 +74,14 @@
             "recipeApi",
             "recipeApi.json"
           ]
+        },
+        {
+          "!type": "External",
+          "file": [
+            "forms",
+            "REAL_GOOGLE_API",
+            "REAL_GOOGLE_API.json"
+          ]
         }
       ],
       "configxml": null,
@@ -95,7 +103,7 @@
       "eslintRules": null,
       "expanded_pmp": null,
       "extraheaders": null,
-      "firstform": "Login",
+      "firstform": "REAL_GOOGLE_API",
       "fontFamily": "system",
       "googlePlayKey": "certificates/google.json",
       "googlePlayTrack": "production",
