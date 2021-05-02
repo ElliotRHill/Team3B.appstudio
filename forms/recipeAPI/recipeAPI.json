@@ -14,72 +14,72 @@
       "!type": "External",
       "file": [
         "forms",
-        "googleAPI",
+        "recipeAPI",
         "Elements",
-        "txtaLocation.json"
+        "txtaIngredients.json"
       ]
     },
     {
       "!type": "External",
       "file": [
         "forms",
-        "googleAPI",
+        "recipeAPI",
         "Elements",
-        "btnLocation.json"
+        "btnIngredients.json"
       ]
     },
     {
       "!type": "External",
       "file": [
         "forms",
-        "googleAPI",
+        "recipeAPI",
         "Elements",
-        "gmLocations.json"
+        "hbgrPageRecipeYourList.json"
       ]
     },
     {
       "!type": "External",
       "file": [
         "forms",
-        "googleAPI",
+        "recipeAPI",
         "Elements",
-        "btnCL4.json"
+        "inptTJ.json"
       ]
     },
     {
       "!type": "External",
       "file": [
         "forms",
-        "googleAPI",
+        "recipeAPI",
         "Elements",
-        "drpLocation.json"
+        "btnTJ.json"
       ]
     },
     {
       "!type": "External",
       "file": [
         "forms",
-        "googleAPI",
+        "recipeAPI",
         "Elements",
-        "btnClear.json"
+        "inptType.json"
       ]
     },
     {
       "!type": "External",
       "file": [
         "forms",
-        "googleAPI",
+        "recipeAPI",
         "Elements",
-        "hmbMenu3.json"
+        "lblTitle.json"
       ]
     },
     {
       "!type": "External",
       "file": [
         "forms",
-        "googleAPI",
+        "recipeAPI",
         "Elements",
-        "alrtFind.json"
+        "lblList.json"
       ]
     }
   ],
@@ -89,7 +89,7 @@
   "expanded_pmp": null,
   "fullScreen": "true",
   "height": 460,
-  "id": "googleAPI",
+  "id": "recipeAPI",
   "language": "JavaScript",
   "left": "0",
   "locked": false,
