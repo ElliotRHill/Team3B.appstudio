@@ -227,7 +227,7 @@ hmbMenu3.onclick=function(s){
             ChangeForm(weather)
             break;
         case "Recipe":
-            ChangeForm(recipeAPI)
+            ChangeForm(recipeApi)
             break;
         }
     }  
