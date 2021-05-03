@@ -54,6 +54,33 @@
         "Elements",
         "alrtList.json"
       ]
+    },
+    {
+      "!type": "External",
+      "file": [
+        "forms",
+        "recipeApi",
+        "Elements",
+        "inptTJ.json"
+      ]
+    },
+    {
+      "!type": "External",
+      "file": [
+        "forms",
+        "recipeApi",
+        "Elements",
+        "inptType.json"
+      ]
+    },
+    {
+      "!type": "External",
+      "file": [
+        "forms",
+        "recipeApi",
+        "Elements",
+        "lblTitle.json"
+      ]
     }
   ],
   "class": "",
